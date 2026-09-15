@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VELTRIX GROUP — Conceito em Streetwear | Criciúma</title>
+<meta name="description" content="Veltrix Conceito — curadoria de streetwear e drops. Entrega no mesmo dia em Criciúma e envio para todo o Brasil.">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --petrol:#0f4d52; --petrol-deep:#082e31; --ink:#0a0a0b; --paper:#f6f7f6; --mist:#a9bfd2;
+  --orange:#ff7a2f; --teal:#177a82; --white:#fff; --grey:#7d8a8c;
+  --f1:'Josefin Sans',sans-serif; --f2:'Poppins',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f2);font-weight:300;color:var(--ink);background:var(--paper);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--f1);font-weight:300;text-transform:uppercase;letter-spacing:.18em;line-height:1.2}
+::selection{background:var(--orange);color:#fff}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;
+  padding:22px 4vw;color:#fff;transition:background .4s,padding .4s}
+nav.solid{background:rgba(10,10,11,.92);backdrop-filter:blur(10px);padding:14px 4vw;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{font-family:var(--f1);font-weight:600;font-size:1.05rem;letter-spacing:.34em}
+.logo b{color:var(--orange);font-weight:600}
+.menu{display:flex;gap:34px;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.66)}
+.menu a{transition:.3s;position:relative}
+.menu a:hover{color:#fff}
+.menu a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--orange);transition:.3s}
+.menu a:hover::after{width:100%}
+.zap{border:1px solid rgba(255,255,255,.4);padding:9px 20px;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;transition:.3s}
+.zap:hover{background:var(--orange);border-color:var(--orange);color:#0a0a0b}
+.ham{display:none;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer}
+
+/* HERO SLIDER */
+.hero{position:relative;height:100svh;overflow:hidden;background:var(--ink)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;
+  display:flex;align-items:center;justify-content:center;text-align:center}
+.slide.on{opacity:1}
+.s1{background:radial-gradient(110% 100% at 75% 15%,var(--petrol),var(--petrol-deep) 55%,var(--ink) 85%)}
+.s2{background:linear-gradient(200deg,#1c1e21 0%,#0a0a0b 55%),radial-gradient(60% 60% at 20% 80%,rgba(255,122,47,.25),transparent)}
+.s3{background:radial-gradient(100% 90% at 30% 70%,var(--teal),var(--ink) 75%)}
+.slide::before{content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,255,255,.012) 2px 4px)}
+.slide-in{position:relative;z-index:2;color:#fff;padding:0 6vw;transform:translateY(24px);opacity:0;transition:1s .4s}
+.slide.on .slide-in{transform:none;opacity:1}
+.kicker{font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--mist);margin-bottom:20px}
+.slide h1{font-size:clamp(1.9rem,5.6vw,4.4rem);margin-bottom:18px}
+.slide h1 b{font-weight:600;color:var(--orange)}
+.sub{font-weight:200;font-size:clamp(.85rem,1.6vw,1.05rem);color:rgba(255,255,255,.75);max-width:560px;margin:0 auto;letter-spacing:.04em}
+.dots{position:absolute;bottom:88px;left:50%;transform:translateX(-50%);z-index:5;display:flex;gap:14px}
+.dots i{width:34px;height:2px;background:rgba(255,255,255,.3);cursor:pointer;transition:.3s}
+.dots i.on{background:var(--orange)}
+.discover{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:5;color:rgba(255,255,255,.5);
+  font-size:.55rem;letter-spacing:.4em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
+.discover::after{content:'';width:1px;height:34px;background:linear-gradient(var(--orange),transparent);animation:fall 1.8s infinite}
+@keyframes fall{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* STATEMENT */
+.statement{padding:150px 6vw;background:var(--paper);text-align:center}
+.statement h2{font-size:clamp(1.5rem,4vw,2.9rem);max-width:1050px;margin:0 auto;color:var(--petrol-deep)}
+.statement h2 b{font-weight:600;color:var(--petrol)}
+.statement p{margin-top:26px;color:var(--grey);max-width:640px;margin-inline:auto;font-size:.95rem;line-height:1.9}
+
+/* SECTION SPLIT (Who we are) */
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:82vh}
+.split .txt{padding:12vh 5vw;display:flex;flex-direction:column;justify-content:center;background:var(--white)}
+.eyebrow{font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--teal);margin-bottom:22px}
+.split h2{font-size:clamp(1.5rem,3.4vw,2.5rem);color:var(--ink);margin-bottom:24px}
+.split h2 b{font-weight:600;color:var(--orange)}
+.split p{color:var(--grey);line-height:1.9;font-size:.92rem;margin-bottom:14px}
+.num{font-family:var(--f1);font-weight:200;font-size:9rem;line-height:1;color:rgba(15,77,82,.14);margin-bottom:8px}
+.imgside{position:relative;overflow:hidden;min-height:340px}
+.imgside .fill{position:absolute;inset:0}
+.f-a{background:radial-gradient(90% 80% at 70% 20%,var(--teal),var(--petrol-deep) 60%,var(--ink))}
+.f-b{background:linear-gradient(160deg,#17191c,#0a0a0b 60%),radial-gradient(50% 50% at 80% 90%,rgba(255,122,47,.3),transparent)}
+.f-c{background:radial-gradient(100% 80% at 30% 80%,var(--petrol),var(--ink) 70%)}
+.imgside .cap{position:absolute;left:40px;bottom:40px;color:rgba(255,255,255,.8);font-size:.6rem;letter-spacing:.34em;text-transform:uppercase}
+.imgside::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,255,255,.02) 2px 4px)}
+
+/* DIVISIONS */
+.divs{background:var(--ink);color:#fff;padding:130px 6vw}
+.divs .head{text-align:center;margin-bottom:70px}
+.divs h2{font-size:clamp(1.5rem,3.6vw,2.6rem)}
+.divs h2 b{font-weight:600;color:var(--orange)}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;max-width:1200px;margin:0 auto}
+.dcell{background:#121315;padding:52px 32px;transition:.4s;position:relative;overflow:hidden}
+.dcell:hover{background:var(--petrol-deep)}
+.dcell h3{font-size:.86rem;letter-spacing:.24em;margin-bottom:18px;font-weight:400}
+.dcell p{color:var(--mist);font-size:.8rem;line-height:1.8}
+.dcell span{position:absolute;top:18px;right:22px;font-family:var(--f1);font-size:.7rem;color:rgba(255,255,255,.22)}
+.dcell::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--orange);transition:.5s}
+.dcell:hover::after{width:100%}
+
+/* COVERAGE */
+.cover{padding:140px 6vw;text-align:center;background:var(--paper)}
+.cover h2{font-size:clamp(1.5rem,3.6vw,2.6rem);color:var(--petrol-deep);max-width:900px;margin:0 auto 60px}
+.cover h2 b{font-weight:600;color:var(--teal)}
+.cities{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:26px;max-width:1100px;margin:0 auto}
+.city{padding:28px 10px;background:#fff;border:1px solid rgba(15,77,82,.1);transition:.35s;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--petrol-deep)}
+.city:hover{transform:translateY(-6px);border-color:var(--orange);box-shadow:0 18px 40px rgba(8,46,49,.12)}
+.city b{display:block;font-family:var(--f1);font-weight:600;font-size:.95rem;letter-spacing:.1em;margin-bottom:8px}
+.cover .fine{margin-top:48px;color:var(--grey);font-size:.8rem;letter-spacing:.06em}
+
+/* NUMBERS STRIP */
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));background:var(--petrol-deep);color:#fff;padding:60px 4vw;gap:30px;text-align:center}
+.strip div b{font-family:var(--f1);font-weight:200;font-size:2.6rem;display:block;color:var(--orange)}
+.strip div span{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mist)}
+
+/* COMMITMENT */
+.commit{padding:140px 6vw;text-align:center;background:#fff}
+.commit h2{font-size:clamp(1.5rem,3.6vw,2.6rem);color:var(--ink);max-width:860px;margin:0 auto 30px}
+.commit h2 b{font-weight:600;color:var(--orange)}
+.commit p{max-width:620px;margin:0 auto;color:var(--grey);line-height:1.95;font-size:.93rem}
+
+/* CTA BAND */
+.band{background:linear-gradient(120deg,var(--petrol) 0%,var(--petrol-deep) 55%,var(--ink));padding:110px 6vw;text-align:center;color:#fff}
+.band h2{font-size:clamp(1.4rem,3.4vw,2.4rem);margin-bottom:30px}
+.band h2 b{font-weight:600;color:var(--orange)}
+.btn{display:inline-block;border:1px solid #fff;padding:16px 44px;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:#fff;transition:.3s}
+.btn:hover{background:var(--orange);border-color:var(--orange);color:#0a0a0b}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--mist);padding:60px 6vw 40px;display:grid;grid-template-columns:1fr auto auto;gap:30px;align-items:start}
+footer .logo{margin-bottom:14px}
+footer p{font-size:.7rem;line-height:1.9}
+footer h4{font-family:var(--f1);font-weight:400;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#fff;margin-bottom:14px}
+footer a{display:block;font-size:.7rem;margin-bottom:10px;transition:.3s}
+footer a:hover{color:var(--orange)}
+.copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;margin-top:26px;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase}
+
+/* WPP FLOAT */
+.wpp{position:fixed;right:22px;bottom:22px;z-index:70;width:56px;height:56px;border-radius:50%;background:var(--orange);
+  color:#0a0a0b;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 12px 30px rgba(255,122,47,.4);transition:.3s}
+.wpp:hover{transform:scale(1.12)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s}
+.rv.on{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .menu{position:fixed;top:0;right:0;bottom:0;width:76vw;background:rgba(10,10,11,.98);flex-direction:column;
+    justify-content:center;padding:0 8vw;transform:translateX(100%);transition:.45s}
+  .menu.open{transform:none}
+  .ham{display:block;z-index:65}
+  .zap{display:none}
+  .split{grid-template-columns:1fr}
+  footer{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="logo" href="#top">VELTRIX<b>°</b>CONCEITO</a>
+  <div class="menu" id="menu">
+    <a href="#quem">Quem Somos</a>
+    <a href="#divisoes">Divisões</a>
+    <a href="#abrangencia">Abrangência</a>
+    <a href="#compromisso">Compromisso</a>
+  </div>
+  <a class="zap" href="https://wa.me/5548999990000?text=Opa!%20Quero%20o%20Drop%2002" target="_blank">WhatsApp</a>
+  <button class="ham" id="ham">☰</button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="slide s1 on"><div class="slide-in">
+    <div class="kicker">Curadoria · Drops · Atitude</div>
+    <h1>A <b>Veltrix</b> é uma casa de<br>conceito em streetwear</h1>
+    <p class="sub">Selecionamos, testamos e vestimos. Cada drop é uma coleção fechada: poucas peças, curadoria grande, zero estoque parado.</p>
+  </div></div>
+  <div class="slide s2"><div class="slide-in">
+    <div class="kicker">2º Drop · Últimas Peças</div>
+    <h1>Peça escolhida.<br>Peça <b>vendida</b>. Peça sua.</h1>
+    <p class="sub">Entrega por motoboy no mesmo dia em Criciúma e envio com rastreio para todo o Brasil.</p>
+  </div></div>
+  <div class="slide s3"><div class="slide-in">
+    <div class="kicker">Série Vale a Pena Mesmo?</div>
+    <h1>A gente compra.<br>A gente <b>testa</b>. A gente fala.</h1>
+    <p class="sub">Review honesto de cada peça antes de virar drop. Se não vale, a gente conta — e não compra.</p>
+  </div></div>
+  <div class="dots" id="dots"><i class="on"></i><i></i><i></i></div>
+  <div class="discover">Deslize para descobrir</div>
+</header>
+
+<section class="statement">
+  <h2 class="rv">"Streetwear não é etiqueta.<br>É <b>conceito</b>."</h2>
+  <p class="rv">A Veltrix não empilha roupa em arara. Nós caçamos a peça certa, verificamos autenticidade, vestimos antes de vocês — e só então abrimos o drop. O que era loja de Instagram virou operação: catálogo vivo, embalagem premium e entrega que chega antes da empolgação passar.</p>
+</section>
+
+<section class="split" id="quem">
+  <div class="txt rv">
+    <div class="num">01</div>
+    <div class="eyebrow">Quem Somos</div>
+    <h2>Nascemos no <b>direct</b>,<br>crescemos na rua</h2>
+    <p>Criciúma, Santa Catarina. A Veltrix Conceito começou como um perfil apaixonado por moda masculina e virou referência local em drops de streetwear com curadoria.</p>
+    <p>Cada peça passa por três filtros: procedência, caimento e vontade de usar. Se uma reprova, ela não entra. Por isso nossos drops acabam — porque só vendemos o que passar.</p>
+  </div>
+  <div class="imgside"><div class="fill f-a"></div><div class="cap">Estúdio Veltrix · Criciúma-SC</div></div>
+</section>
+
+<section class="split">
+  <div class="imgside"><div class="fill f-b" style="order:-1"></div><div class="cap">Embalagem · Unboxing Veltrix</div></div>
+  <div class="txt rv">
+    <div class="num">02</div>
+    <div class="eyebrow">Como Operamos</div>
+    <h2>Estrutura de <b>loja grande</b>,<br>com alma de garagem</h2>
+    <p>Sistema de drops com contagem regressiva, prova social em "Vendidos", influenciadores usando as peças e unboxing que virou espetáculo nos stories.</p>
+    <p>Atendimento humano — direct e WhatsApp — seg a sáb. Nada de robô: quem te atende já vestiu o que você quer comprar.</p>
+  </div>
+</section>
+
+<section class="divs" id="divisoes">
+  <div class="head rv">
+    <div class="eyebrow">O ecossistema</div>
+    <h2>Nossas <b>divisões</b></h2>
+  </div>
+  <div class="dgrid">
+    <div class="dcell rv"><span>01</span><h3>Streetwear</h3><p>Tees, camisetões e básicos premium de marcas mundiais com curadoria de caimento. A base de todo guarda-roupa Veltrix.</p></div>
+    <div class="dcell rv"><span>02</span><h3>Shorts & Calçados</h3><p>Sarja, sport e o par que fecha o look. Verão catarinense não perdoa — nós também não.</p></div>
+    <div class="dcell rv"><span>03</span><h3>Acessórios</h3><p>Correntes, bonés, óculos e relógios. O detalhe que separa quem veste de quem compõe.</p></div>
+    <div class="dcell rv"><span>04</span><h3>Laboratório</h3><p>A série "Vale a Pena Mesmo?": compramos, testamos e mostramos a real de cada peça e tag antes do drop.</p></div>
+  </div>
+</section>
+
+<section class="cover" id="abrangencia">
+  <h2 class="rv">Da nossa cidade<br>para <b>todo o Brasil</b></h2>
+  <div class="cities">
+    <div class="city rv"><b>Criciúma</b>Motoboy no mesmo dia</div>
+    <div class="city rv"><b>Região Sul</b>Entrega expressa</div>
+    <div class="city rv"><b>São Paulo</b>Envio em 24h</div>
+    <div class="city rv"><b>Brasil</b>Rastreio completo</div>
+  </div>
+  <p class="fine">Estacionamento de drop aberto no horário do post · retirada combinada pelo WhatsApp</p>
+</section>
+
+<div class="strip">
+  <div><b>2º</b><span>Drop aberto agora</span></div>
+  <div><b>0,7k+</b><span>Peças vendidas</span></div>
+  <div><b>100%</b><span>Procedência verificada</span></div>
+  <div><b>6/7</b><span>Dias de atendimento</span></div>
+</div>
+
+<section class="commit" id="compromisso">
+  <div class="eyebrow">Compromisso</div>
+  <h2 class="rv">Autêntico ou <b>nada</b>.</h2>
+  <p class="rv">Tag costurada, bordado conferido, etiqueta olhada na lupa. A Veltrix não trabalha com réplica — se você duvidou, manda a foto que a gente mostra o porquê da originalidade. Troca fácil em 7 dias, nota e rastreio sempre. É pequeno, mas é sério.</p>
+</section>
+
+<section class="band">
+  <h2 class="rv">O drop acaba.<br>O <b>conceito</b> fica.</h2>
+  <a class="btn" href="https://instagram.com/veltrix_conceito" target="_blank">@veltrix_conceito</a>&nbsp;
+  <a class="btn" href="https://wa.me/5548999990000?text=Quero%20entrar%20no%20Drop" target="_blank">Chamar no Zap</a>
+</section>
+
+<footer>
+  <div>
+    <a class="logo" href="#top">VELTRIX<b>°</b>CONCEITO</a>
+    <p>Curadoria de streetwear desde Criciúma-SC.<br>Drops, reviews e atitude — sem estoque empoeirado.</p>
+  </div>
+  <div><h4>Navegação</h4>
+    <a href="#quem">Quem Somos</a><a href="#divisoes">Divisões</a><a href="#abrangencia">Abrangência</a><a href="#compromisso">Compromisso</a>
+  </div>
+  <div><h4>Contato</h4>
+    <a href="https://wa.me/5548999990000" target="_blank">WhatsApp</a><a href="https://instagram.com/veltrix_conceito" target="_blank">Instagram</a>
+  </div>
+  <div class="copy">© 2026 Veltrix Conceito — Criciúma, Santa Catarina</div>
+</footer>
+
+<a class="wpp" href="https://wa.me/5548999990000?text=Opa%20Veltrix!" target="_blank">🛒</a>
+
+<script>
+/* HERO SLIDER */
+const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('#dots i')];
+let cur=0,auto;
+function go(i){slides[cur].classList.remove('on');dots[cur].classList.remove('on');cur=(i+slides.length)%slides.length;
+  slides[cur].classList.add('on');dots[cur].classList.add('on');}
+function autoNext(){auto=setInterval(()=>go(cur+1),6500)}
+dots.forEach((d,i)=>d.onclick=()=>{clearInterval(auto);go(i);autoNext()});
+autoNext();
+
+/* NAV solid on scroll */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>60),{passive:true});
+
+/* MENU */
+document.getElementById('ham').onclick=()=>document.getElementById('menu').classList.toggle('open');
+document.querySelectorAll('.menu a').forEach(a=>a.onclick=()=>document.getElementById('menu').classList.remove('open'));
+
+/* REVEAL */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.18});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
