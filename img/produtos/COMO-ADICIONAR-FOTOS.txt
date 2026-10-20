@@ -1,0 +1,33 @@
+VELTRIX CONCEITO — como colocar as fotos reais dos produtos
+============================================================
+
+1. ONDE SALVAR
+   Salve as fotos nesta pasta:  img/produtos/
+
+2. NOMES DOS ARQUIVOS (já configurados no index.html)
+   - tee-jacare.jpg      → Tee Preta · Jacaré
+   - tee-listra.jpg      → Tee Off-White · Listra
+   - shorts-sarja.jpg    → Shorts Sarja Preto
+   - kit-sport.jpg       → Kit Sport · Tags Original
+
+   Se preferir outro nome, é só trocar o atributo src=... do card
+   correspondente no index.html (procure por "img/produtos/").
+
+3. FORMATO E TAMANHO
+   - Proporção: 4:5 (retrato) — ex.: 1200 x 1500 px
+   - Formato: .jpg (ou .webp / .avif, que carregam ainda mais rápido)
+   - Peso: até ~300 KB por foto (deixe o site leve no 4G)
+
+4. ENQUANTO NÃO TIVER FOTO
+   Os cards continuam mostrando o fundo escuro com o nome da peça —
+   nada quebra. Assim que a foto entrar na pasta, ela aparece sozinha.
+
+5. DICA DE FOTO
+   Fundo liso, luz boa (janela de dia serve), peça esticada ou no corpo.
+   Mesma luz e mesmo fundo nas 4 fotos deixa o drop com cara de marca.
+
+6. FOTOS GRANDES (lightbox)
+   Ao clicar na foto do card, abre o tamanho grande automaticamente.
+   Se quiser uma foto diferente do card (ex.: detalhe da costura),
+   salve como  tee-jacare-full.jpg  e ajuste no index.html o atributo
+   data-full-img="img/produtos/tee-jacare-full.jpg".

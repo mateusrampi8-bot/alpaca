@@ -5,6 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VELTRIX CONCEITO — Streetwear | Criciúma-SC</title>
 <meta name="description" content="VELTRIX CONCEITO — curadoria de streetwear em drops. Entrega por motoboy em Criciúma e envio para todo o Brasil.">
+<link rel="canonical" href="https://mateusrampi8-bot.github.io/veltrix-site/">
+<meta name="theme-color" content="#0a0a0b">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph (WhatsApp / Instagram / Facebook) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VELTRIX CONCEITO">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="VELTRIX CONCEITO — Streetwear em drops | Criciúma-SC">
+<meta property="og:description" content="Curadoria de streetwear em drops. Motoboy no mesmo dia em Criciúma e envio para todo o Brasil. Últimas peças do 2º DROP.">
+<meta property="og:url" content="https://mateusrampi8-bot.github.io/veltrix-site/">
+<meta property="og:image" content="https://mateusrampi8-bot.github.io/veltrix-site/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VELTRIX CONCEITO — Streetwear em drops | Criciúma-SC">
+<meta name="twitter:description" content="Curadoria de streetwear em drops. Motoboy no mesmo dia em Criciúma e envio para todo o Brasil.">
+<meta name="twitter:image" content="https://mateusrampi8-bot.github.io/veltrix-site/og-cover.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -84,6 +109,8 @@ section{padding:110px 6vw;position:relative}
 .garment::after{content:'';position:absolute;inset:0;background:
   radial-gradient(60% 80% at 25% 20%, rgba(255,255,255,.16), transparent 60%),
   radial-gradient(50% 70% at 85% 90%, rgba(255,122,47,.18), transparent 60%)}
+.garment img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;transition:transform .5s}
+.card:hover .garment img{transform:scale(1.06)}
 .g-tee-b{background:linear-gradient(150deg,#1c1e21,#0c0d0e)}
 .g-tee-w{background:linear-gradient(150deg,#e9eae8,#b9bcb9)}
 .g-shorts{background:linear-gradient(150deg,#23262a,#101214)}
@@ -131,10 +158,33 @@ section{padding:110px 6vw;position:relative}
 .sobre p.big em{font-style:normal;color:var(--orange)}
 .sobre .fine{margin-top:26px;color:var(--grey);font-size:.9rem;max-width:640px;line-height:1.7}
 
+/* SOBRE LINKS */
+.sobre-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+
 /* FOOTER */
 footer{border-top:1px solid rgba(255,255,255,.07);padding:44px 6vw;display:flex;justify-content:space-between;gap:18px;
   flex-wrap:wrap;color:var(--grey);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
 footer b{color:var(--white)}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:4vw;
+  background:rgba(5,5,6,.92);backdrop-filter:blur(10px)}
+.lb.on{display:flex}
+.lb-inner{display:flex;gap:30px;max-width:900px;width:100%;background:linear-gradient(160deg,var(--smoke),var(--coal));
+  border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:30px;position:relative;animation:lbin .35s ease}
+@keyframes lbin{from{opacity:0;transform:scale(.94) translateY(16px)}to{opacity:1;transform:none}}
+.lb-img{flex:1 1 300px;min-height:340px;border-radius:16px;overflow:hidden;position:relative;background:var(--coal)}
+.lb-img img{width:100%;height:100%;object-fit:cover;display:block}
+.lb-img::after{content:'Foto em breve';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:'Archivo Black';font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.lb-img.has-img::after{display:none}
+.lb-info{flex:1 1 260px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.lb-info h3{font-size:1.5rem}
+.lb-info p{color:var(--grey);font-size:.9rem;line-height:1.7}
+.lb-info .stock{align-self:flex-start}
+.lb-close{position:absolute;top:14px;right:18px;background:none;border:0;color:var(--grey);font-size:1.6rem;cursor:pointer;line-height:1;transition:.2s}
+.lb-close:hover{color:var(--orange);transform:rotate(90deg)}
+@media(max-width:720px){.lb-inner{flex-direction:column;gap:18px;padding:20px}.lb-img{min-height:240px}}
 
 /* WHATSAPP FLOAT */
 .wpp-float{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--orange);
@@ -164,7 +214,7 @@ footer b{color:var(--white)}
     <a href="#drops">Drops</a>
     <a href="#vpm">Vale a pena?</a>
     <a href="#destaques">Destaques</a>
-    <a href="#sobre">Sobre</a>
+    <a href="sobre.html">Sobre</a>
   </div>
   <a class="cta-wpp" href="https://wa.me/5548999990000?text=Opa!%20Quero%20saber%20do%20DROP%20que%20vi%20no%20site%20da%20Veltrix" target="_blank">Chamar no Zap</a>
   <button class="burger" id="burger">☰</button>
@@ -201,29 +251,29 @@ footer b{color:var(--white)}
     <p>Tudo que você vê abaixo é o que restou. Acabou, foi — drop novo só semana que vem.</p>
   </div>
   <div class="grid">
-    <div class="card reveal" data-tilt>
+    <div class="card reveal" data-tilt data-name="Tee Preta · Jacaré" data-desc="Malha premium, bordado lateral. A básica que resolve look inteiro." data-stock="Restam 4" data-img="img/produtos/tee-jacare.jpg" data-buy="https://wa.me/5548999990000?text=Quero%20a%20Tee%20Preta%20Jacar%C3%A9">
       <span class="num">01</span>
-      <div class="garment g-tee-b"><span class="g-ico">CROCODILE</span></div>
+      <div class="garment g-tee-b"><span class="g-ico">CROCODILE</span><img src="img/produtos/tee-jacare.jpg" alt="Tee Preta Jacaré" loading="lazy" onerror="this.remove()"></div>
       <h3>Tee Preta · Jacaré</h3><p>Malha premium, bordado lateral. A básica que resolve look inteiro.</p>
-      <div class="meta"><span class="stock">Restam 4</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20a%20Tee%20Preta%20Jacar%C3%A9" target="_blank">Comprar →</a></div>
+      <div class="meta"><span class="stock">Restam 4</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20a%20Tee%20Preta%20Jacar%C3%A9" target="_blank" rel="noopener">Comprar →</a></div>
     </div>
-    <div class="card reveal" data-tilt>
+    <div class="card reveal" data-tilt data-name="Tee Off-White · Listra" data-desc="Punho com listra clássica. Corte amplo, ombro caído, presença." data-stock="Restam 2" data-img="img/produtos/tee-listra.jpg" data-buy="https://wa.me/5548999990000?text=Quero%20a%20Tee%20Off-White">
       <span class="num">02</span>
-      <div class="garment g-tee-w"><span class="g-ico">TOMMY</span></div>
+      <div class="garment g-tee-w"><span class="g-ico">TOMMY</span><img src="img/produtos/tee-listra.jpg" alt="Tee Off-White Listra" loading="lazy" onerror="this.remove()"></div>
       <h3>Tee Off-White · Listra</h3><p>Punho com listra clássica. Corte amplo, ombro caído, presença.</p>
-      <div class="meta"><span class="stock">Restam 2</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20a%20Tee%20Off-White" target="_blank">Comprar →</a></div>
+      <div class="meta"><span class="stock">Restam 2</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20a%20Tee%20Off-White" target="_blank" rel="noopener">Comprar →</a></div>
     </div>
-    <div class="card reveal" data-tilt>
+    <div class="card reveal" data-tilt data-name="Shorts Sarja Preto" data-desc="Cordão com ponta metálica, caimento mid. Verão não perdoa, você não precisa." data-stock="Último par" data-img="img/produtos/shorts-sarja.jpg" data-buy="https://wa.me/5548999990000?text=Quero%20o%20Shorts%20Sarja">
       <span class="num">03</span>
-      <div class="garment g-shorts"><span class="g-ico">DISEL</span></div>
+      <div class="garment g-shorts"><span class="g-ico">DISEL</span><img src="img/produtos/shorts-sarja.jpg" alt="Shorts Sarja Preto" loading="lazy" onerror="this.remove()"></div>
       <h3>Shorts Sarja Preto</h3><p>Cordão com ponta metálica, caimento mid. Verão não perdoa, você não precisa.</p>
-      <div class="meta"><span class="stock">Último par</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20o%20Shorts%20Sarja" target="_blank">Comprar →</a></div>
+      <div class="meta"><span class="stock">Último par</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20o%20Shorts%20Sarja" target="_blank" rel="noopener">Comprar →</a></div>
     </div>
-    <div class="card reveal" data-tilt>
+    <div class="card reveal" data-tilt data-name="Kit Sport · Tags Original" data-desc="Conjunto de treino com tags. O review completo tá no perfil: &quot;vale a pena mesmo?&quot;" data-stock="Restam 3" data-img="img/produtos/kit-sport.jpg" data-buy="https://wa.me/5548999990000?text=Quero%20o%20Kit%20Sport">
       <span class="num">04</span>
-      <div class="garment g-mix"><span class="g-ico">NIKE KIT</span></div>
+      <div class="garment g-mix"><span class="g-ico">NIKE KIT</span><img src="img/produtos/kit-sport.jpg" alt="Kit Sport Tags Original" loading="lazy" onerror="this.remove()"></div>
       <h3>Kit Sport · Tags Original</h3><p>Conjunto de treino com tags. O review completo tá no perfil: "vale a pena mesmo?".</p>
-      <div class="meta"><span class="stock">Restam 3</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20o%20Kit%20Sport" target="_blank">Comprar →</a></div>
+      <div class="meta"><span class="stock">Restam 3</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20o%20Kit%20Sport" target="_blank" rel="noopener">Comprar →</a></div>
     </div>
   </div>
 </section>
@@ -268,16 +318,34 @@ footer b{color:var(--white)}
     <div class="eyebrow">Manifesto</div>
     <p class="big">Streetwear não é etiqueta — é <em>conceito</em>. A gente não empilha roupa em arara: seleciona, testa, veste e mostra o que sobrou. <em>Drop pequeno, curadoria grande.</em></p>
     <p class="fine">Veltrix Conceito · Criciúma - SC · Atendimento segunda a sábado pelo direct e WhatsApp · Entrega por motoboy no mesmo dia em Criciúma e região · Envio com rastreio para todo o Brasil.</p>
+    <div class="sobre-links reveal">
+      <a class="btn btn-ghost" href="sobre.html">Conhecer a Veltrix →</a>
+      <a class="btn btn-ghost" href="https://instagram.com/veltrix_conceito" target="_blank" rel="noopener">Instagram</a>
+    </div>
   </div>
 </section>
 
 <footer>
   <div><b>VELTRIX°CONCEITO</b> — Criciúma, SC</div>
-  <div><a href="https://instagram.com/veltrix_conceito" target="_blank">@veltrix_conceito</a> · <a href="https://wa.me/5548999990000" target="_blank">WhatsApp</a></div>
+  <div><a href="https://instagram.com/veltrix_conceito" target="_blank" rel="noopener">@veltrix_conceito</a> · <a href="https://wa.me/5548999990000" target="_blank" rel="noopener">WhatsApp</a> · <a href="sobre.html">Sobre</a></div>
   <div>© 2026 — feito com atitude</div>
 </footer>
 
-<a class="wpp-float" href="https://wa.me/5548999990000?text=Opa%20Veltrix!" target="_blank" title="Falar no WhatsApp">🛒</a>
+<a class="wpp-float" href="https://wa.me/5548999990000?text=Opa%20Veltrix!" target="_blank" rel="noopener" title="Falar no WhatsApp">🛒</a>
+
+<!-- LIGHTBOX DO PRODUTO -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lbName">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose" aria-label="Fechar">✕</button>
+    <div class="lb-img" id="lbImgWrap"><img id="lbImg" src="" alt=""></div>
+    <div class="lb-info">
+      <h3 id="lbName"></h3>
+      <p id="lbDesc"></p>
+      <span class="stock" id="lbStock"></span>
+      <a class="btn btn-solid" id="lbBuy" href="#" target="_blank" rel="noopener" style="text-align:center">Comprar no WhatsApp →</a>
+    </div>
+  </div>
+</div>
 
 <script>
 /* ---------- 3D SCENE (Three.js) ---------- */
@@ -363,15 +431,43 @@ document.querySelectorAll('[data-tilt]').forEach(el=>{
   el.addEventListener('mouseleave',()=>{el.style.transform='';});
 });
 
-/* ---------- COUNTDOWN (DROP 03, +12 dias) ---------- */
-const target = Date.now() + 12*864e5 + 9*36e5;
+/* ---------- LIGHTBOX PRODUTO ---------- */
+const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'),
+      lbImgWrap=document.getElementById('lbImgWrap'), lbName=document.getElementById('lbName'),
+      lbDesc=document.getElementById('lbDesc'), lbStock=document.getElementById('lbStock'),
+      lbBuy=document.getElementById('lbBuy');
+function openLb(card){
+  lbName.textContent=card.dataset.name;
+  lbDesc.textContent=card.dataset.desc;
+  lbStock.textContent=card.dataset.stock;
+  lbBuy.href=card.dataset.buy;
+  lbImgWrap.classList.remove('has-img'); lbImg.src='';
+  const probe=new Image();
+  probe.onload=()=>{lbImg.src=probe.src;lbImg.alt=card.dataset.name;lbImgWrap.classList.add('has-img');};
+  probe.src=card.dataset.img;
+  lb.classList.add('on'); document.body.style.overflow='hidden';
+}
+function closeLb(){lb.classList.remove('on'); document.body.style.overflow='';}
+document.querySelectorAll('.card[data-name]').forEach(c=>{
+  c.addEventListener('click',e=>{ if(e.target.closest('.go'))return; openLb(c); });
+});
+document.getElementById('lbClose').onclick=closeLb;
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('on'))closeLb()});
+
+/* ---------- COUNTDOWN (DROP 03 — data fixa) ---------- */
+const DROP_DATE = new Date('2026-11-01T20:00:00-03:00').getTime(); // troque aqui a data do próximo drop
 function tick(){
-  let d = Math.max(0, target - Date.now());
+  let d = Math.max(0, DROP_DATE - Date.now());
   const dd=Math.floor(d/864e5), hh=Math.floor(d%864e5/36e5), mm=Math.floor(d%36e5/6e4), ss=Math.floor(d%6e4/1e3);
   document.getElementById('dd').textContent=String(dd).padStart(2,'0');
   document.getElementById('hh').textContent=String(hh).padStart(2,'0');
   document.getElementById('mm').textContent=String(mm).padStart(2,'0');
   document.getElementById('ss').textContent=String(ss).padStart(2,'0');
+  if(d===0){
+    document.querySelector('.count-label').innerHTML='O <b>DROP 03</b> está no ar — corre!';
+    document.getElementById('clock').style.display='none';
+  }
 }
 tick(); setInterval(tick,1000);
 
