@@ -88,7 +88,7 @@ h1{font-size:clamp(3.4rem,12vw,9rem);line-height:.92;margin:22px 0 6px;
 .count-label b{color:var(--orange)}
 .count-clock{display:flex;gap:10px}
 .count-clock div{min-width:62px;text-align:center;background:var(--smoke);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:10px 6px}
-.count-clock span{display:block;font-family:'Archivo Black';font-size:1.35rem;color:var(--white)}
+.count-clock span{display:block;font-family:'Archivo Black',sans-serif;font-size:1.35rem;color:var(--white)}
 .count-clock small{font-size:.55rem;letter-spacing:.2em;color:var(--grey);text-transform:uppercase}
 
 /* SECTIONS */
@@ -104,7 +104,7 @@ section{padding:110px 6vw;position:relative}
 .card{background:linear-gradient(160deg,var(--smoke),var(--coal));border:1px solid rgba(255,255,255,.07);border-radius:22px;
   padding:26px;position:relative;overflow:hidden;transition:transform .18s ease,border-color .3s;transform-style:preserve-3d;cursor:pointer}
 .card:hover{border-color:rgba(255,122,47,.5)}
-.card .num{position:absolute;top:16px;right:20px;font-family:'Archivo Black';font-size:.9rem;color:rgba(255,255,255,.14)}
+.card .num{position:absolute;top:16px;right:20px;font-family:'Archivo Black',sans-serif;font-size:.9rem;color:rgba(255,255,255,.14)}
 .garment{height:190px;border-radius:14px;margin:8px 0 20px;position:relative;overflow:hidden;transform:translateZ(30px)}
 .garment::after{content:'';position:absolute;inset:0;background:
   radial-gradient(60% 80% at 25% 20%, rgba(255,255,255,.16), transparent 60%),
@@ -115,7 +115,7 @@ section{padding:110px 6vw;position:relative}
 .g-tee-w{background:linear-gradient(150deg,#e9eae8,#b9bcb9)}
 .g-shorts{background:linear-gradient(150deg,#23262a,#101214)}
 .g-mix{background:linear-gradient(150deg,#0f4d52,#121214 50%,#0f4d52)}
-.g-ico{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black';
+.g-ico{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',sans-serif;
   font-size:.95rem;letter-spacing:.3em;color:rgba(255,255,255,.85);text-shadow:0 2px 14px rgba(0,0,0,.5)}
 .g-tee-w .g-ico{color:#131416;text-shadow:none}
 .card h3{font-size:1.02rem;letter-spacing:.04em;margin-bottom:6px}
@@ -140,17 +140,23 @@ section{padding:110px 6vw;position:relative}
   background:linear-gradient(160deg,var(--teal) 0%,var(--coal) 60%);border:1px solid rgba(255,255,255,.08);
   display:flex;align-items:center;justify-content:center;transform-style:preserve-3d}
 .vpm-art .coin{width:150px;height:150px;border-radius:50%;border:2px solid var(--orange);display:flex;align-items:center;
-  justify-content:center;font-family:'Archivo Black';font-size:.8rem;letter-spacing:.12em;color:var(--white);
+  justify-content:center;font-family:'Archivo Black',sans-serif;font-size:.8rem;letter-spacing:.12em;color:var(--white);
   animation:spinY 7s linear infinite;box-shadow:0 0 60px rgba(255,122,47,.35),inset 0 0 30px rgba(255,122,47,.15)}
 @keyframes spinY{0%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
 
-/* DESTAQUES */
-.dest{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
-.dcard{padding:34px 24px;border-radius:20px;background:var(--coal);border:1px solid rgba(255,255,255,.06);transition:.35s}
-.dcard:hover{transform:translateY(-8px);border-color:#5fbcc4;box-shadow:0 18px 50px rgba(15,77,82,.4)}
-.dcard b{display:block;font-family:'Archivo Black';font-size:1rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
-.dcard span{font-size:.8rem;color:var(--grey);line-height:1.6}
-.dcard i{display:block;font-size:1.7rem;margin-bottom:14px;font-style:normal}
+/* DESTAQUES — lista editorial */
+.dest{border-top:1px solid rgba(255,255,255,.12)}
+.erow{display:grid;grid-template-columns:96px minmax(180px,.9fr) 1.5fr;gap:26px;align-items:baseline;
+  padding:36px 12px;border-bottom:1px solid rgba(255,255,255,.12);position:relative;transition:background .35s}
+.erow::after{content:'';position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--orange);transition:width .55s ease}
+.erow:hover{background:rgba(255,255,255,.025)}
+.erow:hover::after{width:100%}
+.erow .en{font-family:'Archivo Black',sans-serif;font-size:clamp(1.5rem,3vw,2.3rem);color:rgba(255,255,255,.16);
+  line-height:1;transition:color .35s}
+.erow:hover .en{color:var(--orange)}
+.erow h3{font-family:'Archivo Black',sans-serif;font-size:clamp(1.05rem,2.2vw,1.5rem);letter-spacing:.04em;transition:transform .35s}
+.erow:hover h3{transform:translateX(8px)}
+.erow p{color:var(--grey);font-size:.88rem;line-height:1.75}
 
 /* MANIFESTO / SOBRE */
 .sobre{background:linear-gradient(180deg,var(--ink),var(--teal-deep) 160%)}
@@ -176,7 +182,7 @@ footer b{color:var(--white)}
 .lb-img{flex:1 1 300px;min-height:340px;border-radius:16px;overflow:hidden;position:relative;background:var(--coal)}
 .lb-img img{width:100%;height:100%;object-fit:cover;display:block}
 .lb-img::after{content:'Foto em breve';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-family:'Archivo Black';font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+  font-family:'Archivo Black',sans-serif;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35)}
 .lb-img.has-img::after{display:none}
 .lb-info{flex:1 1 260px;display:flex;flex-direction:column;justify-content:center;gap:14px}
 .lb-info h3{font-size:1.5rem}
@@ -203,6 +209,8 @@ footer b{color:var(--white)}
   .vpm-body{grid-template-columns:1fr}
   .vpm-art{height:260px}
   .cta-wpp{display:none}
+  .erow{grid-template-columns:64px 1fr;gap:4px 16px;padding:26px 4px}
+  .erow p{grid-column:2/-1}
 }
 </style>
 </head>
@@ -306,10 +314,10 @@ footer b{color:var(--white)}
     <p>O perfil é o catálogo ao vivo. O site é onde você confere sem story vencido.</p>
   </div>
   <div class="dest">
-    <div class="dcard reveal"><i>✅</i><b>Vendidos</b><span>Prova real de quem já vestiu o drop. Sem print fake, sem promessa vazia.</span></div>
-    <div class="dcard reveal"><i>📦</i><b>Embalagem</b><span>Unboxing de marca: o pacote chega cheirando a novo e vira story de quem recebe.</span></div>
-    <div class="dcard reveal"><i>🎤</i><b>Influência</b><span>Peça na rua, no corpo de quem usa. Review sincero, inclusive quando dá nota baixa.</span></div>
-    <div class="dcard reveal"><i>🎵</i><b>Músicas</b><span>A trilha do drop é parte do conceito. Reels com som autoral de quem entende o jogo.</span></div>
+    <div class="erow reveal"><span class="en">01</span><h3>Vendidos</h3><p>Prova real de quem já vestiu o drop. Sem print fake, sem promessa vazia.</p></div>
+    <div class="erow reveal"><span class="en">02</span><h3>Embalagem</h3><p>Unboxing de marca: o pacote chega cheirando a novo e vira story de quem recebe.</p></div>
+    <div class="erow reveal"><span class="en">03</span><h3>Influência</h3><p>Peça na rua, no corpo de quem usa. Review sincero, inclusive quando dá nota baixa.</p></div>
+    <div class="erow reveal"><span class="en">04</span><h3>Músicas</h3><p>A trilha do drop é parte do conceito. Reels com som autoral de quem entende o jogo.</p></div>
   </div>
 </section>
 
