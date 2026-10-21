@@ -131,6 +131,26 @@ section{padding:120px 6vw}
 .erow:hover h3{transform:translateX(6px)}
 .erow p{color:var(--grey);font-size:.86rem;font-weight:300}
 
+/* LOOKBOOK */
+.look-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:56px}
+@media(min-width:900px){.look-grid{grid-template-columns:repeat(4,1fr)}}
+.look-item{display:block;width:100%;padding:0;border:1px solid var(--line);background:var(--panel);
+  cursor:pointer;overflow:hidden;aspect-ratio:2/3;position:relative}
+.look-item img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9;transition:transform .6s,opacity .4s}
+.look-item:hover img{transform:scale(1.04);opacity:1}
+.look-item::after{content:'';position:absolute;inset:0;border:1px solid transparent;transition:.3s}
+.look-item:hover::after{border-color:var(--accent)}
+.glb{position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center;
+  background:rgba(5,5,6,.97);padding:5vh 70px}
+.glb.on{display:flex}
+.glb>img{max-width:100%;max-height:100%;object-fit:contain;border:1px solid var(--line);animation:lbin .3s ease}
+.glb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:1px solid var(--line);
+  color:var(--grey);width:44px;height:44px;border-radius:50%;font-size:1rem;cursor:pointer;transition:.25s}
+.glb-nav:hover{color:var(--accent);border-color:var(--accent)}
+.glb-prev{left:14px}.glb-next{right:14px}
+.glb .lb-close{position:absolute;top:16px;right:22px;z-index:2}
+@media(max-width:720px){.glb{padding:60px 12px}.glb-nav{display:none}}
+
 /* MANIFESTO */
 .sobre p.big{font-size:clamp(1.3rem,3vw,1.85rem);font-weight:300;line-height:1.55;max-width:780px}
 .sobre p.big em{font-style:normal;color:var(--accent)}
@@ -300,6 +320,25 @@ footer a:hover{color:var(--accent)}
   </div>
 </section>
 
+<section class="look" id="lookbook">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Campanha 001</div>
+      <h2>Essencial é o que permanece</h2>
+      <p>A primeira campanha ALPACA — básicos bem feitos, luz de estúdio e nada além disso.</p>
+    </div>
+    <div class="look-grid">
+      <button class="look-item reveal" data-full="img/lookbook/lb-01.jpg" aria-label="Ampliar foto 1"><img src="img/lookbook/lb-01.jpg" alt="Campanha ALPACA — camiseta preta e branca" loading="lazy"></button>
+      <button class="look-item reveal" data-full="img/lookbook/lb-02.jpg" aria-label="Ampliar foto 2"><img src="img/lookbook/lb-02.jpg" alt="Campanha ALPACA — camiseta branca sentado" loading="lazy"></button>
+      <button class="look-item reveal" data-full="img/lookbook/lb-03.jpg" aria-label="Ampliar foto 3"><img src="img/lookbook/lb-03.jpg" alt="Campanha ALPACA — camiseta preta" loading="lazy"></button>
+      <button class="look-item reveal" data-full="img/lookbook/lb-04.jpg" aria-label="Ampliar foto 4"><img src="img/lookbook/lb-04.jpg" alt="Campanha ALPACA — camiseta branca com casaco" loading="lazy"></button>
+      <button class="look-item reveal" data-full="img/lookbook/lb-05.jpg" aria-label="Ampliar foto 5"><img src="img/lookbook/lb-05.jpg" alt="Campanha ALPACA — camiseta preta em estúdio" loading="lazy"></button>
+      <button class="look-item reveal" data-full="img/lookbook/lb-06.jpg" aria-label="Ampliar foto 6"><img src="img/lookbook/lb-06.jpg" alt="Campanha ALPACA — camiseta verde militar" loading="lazy"></button>
+      <button class="look-item reveal" data-full="img/lookbook/lb-07.jpg" aria-label="Ampliar foto 7"><img src="img/lookbook/lb-07.jpg" alt="Campanha ALPACA — camiseta branca" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
 <section class="sobre" id="sobre">
   <div class="inner">
     <div class="reveal">
@@ -334,6 +373,14 @@ footer a:hover{color:var(--accent)}
       <a class="tlink" id="lbBuy" href="#" target="_blank" rel="noopener">Comprar no WhatsApp →</a>
     </div>
   </div>
+</div>
+
+<!-- LIGHTBOX DA GALERIA -->
+<div class="glb" id="glb" role="dialog" aria-modal="true">
+  <button class="lb-close" id="glbClose" aria-label="Fechar">✕</button>
+  <button class="glb-nav glb-prev" id="glbPrev" aria-label="Foto anterior">←</button>
+  <img id="glbImg" src="" alt="">
+  <button class="glb-nav glb-next" id="glbNext" aria-label="Próxima foto">→</button>
 </div>
 
 <script>
@@ -402,6 +449,30 @@ document.querySelectorAll('.card[data-name]').forEach(c=>{
 document.getElementById('lbClose').onclick=closeLb;
 lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
 addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('on'))closeLb()});
+
+/* ---------- LIGHTBOX GALERIA ---------- */
+const glb=document.getElementById('glb'), glbImg=document.getElementById('glbImg');
+const gal=[...document.querySelectorAll('.look-item')];
+let gi=0;
+function showGal(i){
+  gi=(i+gal.length)%gal.length;
+  const btn=gal[gi];
+  glbImg.src=btn.dataset.full;
+  glbImg.alt=btn.querySelector('img').alt;
+}
+function openGal(i){ showGal(i); glb.classList.add('on'); document.body.style.overflow='hidden'; }
+function closeGal(){ glb.classList.remove('on'); document.body.style.overflow=''; }
+gal.forEach((b,i)=>b.addEventListener('click',()=>openGal(i)));
+document.getElementById('glbClose').onclick=closeGal;
+document.getElementById('glbPrev').onclick=e=>{e.stopPropagation();showGal(gi-1)};
+document.getElementById('glbNext').onclick=e=>{e.stopPropagation();showGal(gi+1)};
+glb.addEventListener('click',e=>{if(e.target===glb)closeGal()});
+addEventListener('keydown',e=>{
+  if(!glb.classList.contains('on'))return;
+  if(e.key==='Escape')closeGal();
+  if(e.key==='ArrowLeft')showGal(gi-1);
+  if(e.key==='ArrowRight')showGal(gi+1);
+});
 </script>
 </body>
 </html>
