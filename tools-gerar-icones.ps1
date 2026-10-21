@@ -1,7 +1,7 @@
 # Gera icones PNG e capas OG da marca ALPACA (sem acentos no texto p/ evitar problemas de encoding)
 Add-Type -AssemblyName System.Drawing
 
-$out = 'C:\Users\Mateus Guollo\veltrix-site'
+$out = 'C:\Users\Mateus Guollo\alpaca'
 
 function New-Bitmap([int]$w, [int]$h) {
   $bmp = New-Object System.Drawing.Bitmap($w, $h)
