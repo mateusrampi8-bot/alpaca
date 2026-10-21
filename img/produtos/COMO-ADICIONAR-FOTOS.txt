@@ -5,20 +5,27 @@ ALPACA° — como colocar as fotos reais dos produtos
    Salve as fotos nesta pasta:  img/produtos/
 
 2. NOMES DOS ARQUIVOS (já configurados no index.html)
-   - tee-jacare.jpg      → Tee Preta · Jacaré          [OK — já tem foto]
-   - tee-listra.jpg      → Tee Off-White · Listra      [OK — já tem foto]
-   - shorts-sarja.jpg    → Shorts Sarja Preto          [falta foto]
-   - kit-sport.jpg       → Kit Sport · Tags Original   [falta foto]
+   - tee-jacare.jpg      → Tee Preta · Jacaré          [OK]
+   - tee-listra.jpg      → Tee Off-White · Listra      [OK]
+   - shorts-sarja.jpg    → Shorts Sarja Preto          [OK — foto de campanha
+                                                        como stand-in; troque
+                                                        pela foto da peça real
+                                                        mantendo o nome]
+   - kit-sport.jpg       → Kit Sport · Tags Original   [OK — idem acima]
 
    Se preferir outro nome, é só trocar o atributo src=... do card
    correspondente no index.html (procure por "img/produtos/").
 
-2b. GALERIA LOOKBOOK (seção "Essencial é o que permanece")
-    Pasta: img/lookbook/   |   Arquivos: lb-01.jpg até lb-07.jpg (7 fotos)
-    Proporção 2:3 (retrato). Para trocar fotos da galeria é só substituir
-    os arquivos mantendo o nome, ou editar os botões .look-item no index.html.
-    (Fotos de origem estão no script tools-importar-fotos.ps1 que copiou
-     tudo de "OneDrive\Documentos\fotos site".)
+2b. FOTO DO TOPO (hero da home)
+    Arquivo: img/hero.jpg (2:3). É a primeira coisa que o visitante vê.
+    Troque mantendo o nome (ou atualize o src no bloco .hero-photo).
+
+2c. GALERIA LOOKBOOK (seção "Essencial é o que permanece")
+    Pasta: img/lookbook/   |   Arquivos: lb-01.jpg até lb-04.jpg (4 fotos)
+    Proporção 2:3 (retrato). Para trocar é só substituir mantendo o nome,
+    ou editar os botões .look-item no index.html.
+    (Originais das fotos: tools-importar-fotos.ps1 copiou tudo de
+     "OneDrive\Documentos\fotos site".)
 
 3. FORMATO E TAMANHO
    - Proporção: 4:5 (retrato) — ex.: 1200 x 1500 px

@@ -62,7 +62,10 @@ nav .inner{max-width:1160px;margin:0 auto;padding:18px 6vw;display:flex;align-it
 
 /* HERO */
 header{min-height:100svh;display:flex;align-items:center;padding:140px 6vw 90px}
-.hero-inner{max-width:1160px;margin:0 auto;width:100%}
+.hero-inner{max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+.hero-photo{justify-self:end;width:100%;max-width:470px;aspect-ratio:2/3;max-height:70svh;
+  border:1px solid var(--line);overflow:hidden;background:var(--panel)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .kicker{font-size:.66rem;font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:var(--grey)}
 h1{font-size:clamp(3.4rem,13vw,9rem);font-weight:300;letter-spacing:-.04em;line-height:1;margin:26px 0 26px}
 h1 i{color:var(--accent)}
@@ -195,6 +198,9 @@ footer a:hover{color:var(--accent)}
 .reveal.on{opacity:1;transform:none}
 
 @media(max-width:860px){
+  header{padding:118px 6vw 70px}
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-photo{max-width:min(330px,74vw);justify-self:start;max-height:50svh}
   .links{position:fixed;inset:0 0 auto;top:57px;flex-direction:column;gap:22px;background:rgba(10,10,11,.97);
     padding:30px 6vw;display:none;border-bottom:1px solid var(--line)}
   .links.open{display:flex}
@@ -226,12 +232,17 @@ footer a:hover{color:var(--accent)}
 
 <header id="top">
   <div class="hero-inner">
-    <div class="kicker">Streetwear em drops · Criciúma/SC</div>
-    <h1>ALPACA<i>°</i></h1>
-    <p class="hero-tag">Curadoria de streetwear em drops. Sem estoque infinito: peça escolhida, peça vendida, peça na sua mão — motoboy em Criciúma e envio pra todo o Brasil.</p>
-    <div class="hero-links">
-      <a class="tlink" href="#drops">Ver o drop</a>
-      <a class="tlink" href="https://instagram.com/veltrix_conceito" target="_blank" rel="noopener">Instagram</a>
+    <div class="hero-txt">
+      <div class="kicker">Streetwear em drops · Criciúma/SC</div>
+      <h1>ALPACA<i>°</i></h1>
+      <p class="hero-tag">Curadoria de streetwear em drops. Sem estoque infinito: peça escolhida, peça vendida, peça na sua mão — motoboy em Criciúma e envio pra todo o Brasil.</p>
+      <div class="hero-links">
+        <a class="tlink" href="#drops">Ver o drop</a>
+        <a class="tlink" href="https://instagram.com/veltrix_conceito" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="img/hero.jpg" alt="Campanha ALPACA — camiseta verde com sobretudo" fetchpriority="high">
     </div>
   </div>
 </header>
@@ -267,7 +278,7 @@ footer a:hover{color:var(--accent)}
         <div class="meta"><span class="stock">Restam 2</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20a%20Tee%20Off-White" target="_blank" rel="noopener">Comprar →</a></div>
       </div>
       <div class="card reveal" data-name="Shorts Sarja Preto" data-desc="Cordão com ponta metálica, caimento mid. Verão não perdoa, você não precisa." data-stock="Último par" data-img="img/produtos/shorts-sarja.jpg" data-buy="https://wa.me/5548999990000?text=Quero%20o%20Shorts%20Sarja">
-        <div class="ph"><span>Disel</span><img src="img/produtos/shorts-sarja.jpg" alt="Shorts Sarja Preto" loading="lazy" onerror="this.remove()"></div>
+        <div class="ph"><span>Disel</span><img src="img/produtos/shorts-sarja.jpg" alt="Shorts Sarja Preto" style="object-position:50% 74%" loading="lazy" onerror="this.remove()"></div>
         <h3>Shorts Sarja Preto</h3>
         <p>Cordão com ponta metálica, caimento mid. Verão não perdoa, você não precisa.</p>
         <div class="meta"><span class="stock">Último par</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20o%20Shorts%20Sarja" target="_blank" rel="noopener">Comprar →</a></div>
@@ -328,13 +339,10 @@ footer a:hover{color:var(--accent)}
       <p>A primeira campanha ALPACA — básicos bem feitos, luz de estúdio e nada além disso.</p>
     </div>
     <div class="look-grid">
-      <button class="look-item reveal" data-full="img/lookbook/lb-01.jpg" aria-label="Ampliar foto 1"><img src="img/lookbook/lb-01.jpg" alt="Campanha ALPACA — camiseta preta e branca" loading="lazy"></button>
-      <button class="look-item reveal" data-full="img/lookbook/lb-02.jpg" aria-label="Ampliar foto 2"><img src="img/lookbook/lb-02.jpg" alt="Campanha ALPACA — camiseta branca sentado" loading="lazy"></button>
-      <button class="look-item reveal" data-full="img/lookbook/lb-03.jpg" aria-label="Ampliar foto 3"><img src="img/lookbook/lb-03.jpg" alt="Campanha ALPACA — camiseta preta" loading="lazy"></button>
-      <button class="look-item reveal" data-full="img/lookbook/lb-04.jpg" aria-label="Ampliar foto 4"><img src="img/lookbook/lb-04.jpg" alt="Campanha ALPACA — camiseta branca com casaco" loading="lazy"></button>
-      <button class="look-item reveal" data-full="img/lookbook/lb-05.jpg" aria-label="Ampliar foto 5"><img src="img/lookbook/lb-05.jpg" alt="Campanha ALPACA — camiseta preta em estúdio" loading="lazy"></button>
-      <button class="look-item reveal" data-full="img/lookbook/lb-06.jpg" aria-label="Ampliar foto 6"><img src="img/lookbook/lb-06.jpg" alt="Campanha ALPACA — camiseta verde militar" loading="lazy"></button>
-      <button class="look-item reveal" data-full="img/lookbook/lb-07.jpg" aria-label="Ampliar foto 7"><img src="img/lookbook/lb-07.jpg" alt="Campanha ALPACA — camiseta branca" loading="lazy"></button>
+      <button class="look-item reveal" data-full="img/lookbook/lb-01.jpg" aria-label="Ampliar foto 1"><img src="img/lookbook/lb-01.jpg" alt="Campanha ALPACA — camiseta branca na cadeira" loading="lazy"></button>
+      <button class="look-item reveal" data-full="img/lookbook/lb-02.jpg" aria-label="Ampliar foto 2"><img src="img/lookbook/lb-02.jpg" alt="Campanha ALPACA — camiseta preta no baú" loading="lazy"></button>
+      <button class="look-item reveal" data-full="img/lookbook/lb-03.jpg" aria-label="Ampliar foto 3"><img src="img/lookbook/lb-03.jpg" alt="Campanha ALPACA — camiseta branca com casaco" loading="lazy"></button>
+      <button class="look-item reveal" data-full="img/lookbook/lb-04.jpg" aria-label="Ampliar foto 4"><img src="img/lookbook/lb-04.jpg" alt="Campanha ALPACA — camiseta branca de perfil" loading="lazy"></button>
     </div>
   </div>
 </section>
