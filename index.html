@@ -1,486 +1,506 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALPACA° — Streetwear em drops | Criciúma-SC</title>
-<meta name="description" content="ALPACA° — curadoria de streetwear em drops. Entrega por motoboy em Criciúma e envio para todo o Brasil.">
-<link rel="canonical" href="https://mateusrampi8-bot.github.io/alpaca/">
-<meta name="theme-color" content="#0a0a0b">
-
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-<!-- Open Graph (WhatsApp / Instagram / Facebook) -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="ALPACA°">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="ALPACA° — Streetwear em drops | Criciúma-SC">
-<meta property="og:description" content="Curadoria de streetwear em drops. Motoboy no mesmo dia em Criciúma e envio para todo o Brasil. Últimas peças do 2º DROP.">
-<meta property="og:url" content="https://mateusrampi8-bot.github.io/alpaca/">
-<meta property="og:image" content="https://mateusrampi8-bot.github.io/alpaca/og-cover.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ALPACA° — Streetwear em drops | Criciúma-SC">
-<meta name="twitter:description" content="Curadoria de streetwear em drops. Motoboy no mesmo dia em Criciúma e envio para todo o Brasil.">
-<meta name="twitter:image" content="https://mateusrampi8-bot.github.io/alpaca/og-cover.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#0a0a0b; --panel:#101113; --line:rgba(255,255,255,.1);
-  --white:#f2f2f0; --grey:#8b9093; --accent:#ff7a2f;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--white);font-family:'Inter',sans-serif;font-weight:400;
-  line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-i{font-style:normal}
-::selection{background:var(--accent);color:var(--ink)}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,11,.78);
-  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-nav .inner{max-width:1160px;margin:0 auto;padding:18px 6vw;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:600;font-size:.9rem;letter-spacing:.26em}
-.logo i{color:var(--accent)}
-.links{display:flex;gap:32px;font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
-.links a{color:var(--grey);transition:.25s}
-.links a:hover{color:var(--white)}
-.zap{font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
-  border-bottom:1px solid var(--accent);padding-bottom:2px;transition:.25s}
-.zap:hover{color:var(--accent)}
-.burger{display:none;background:none;border:0;color:var(--white);font-size:1.3rem;cursor:pointer}
-
-/* HERO */
-header{min-height:100svh;display:flex;align-items:center;padding:140px 6vw 90px}
-.hero-inner{max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
-.hero-photo{justify-self:end;width:100%;max-width:470px;aspect-ratio:2/3;max-height:70svh;
-  border:1px solid var(--line);overflow:hidden;background:var(--panel)}
-.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.kicker{font-size:.66rem;font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:var(--grey)}
-h1{font-size:clamp(3.4rem,13vw,9rem);font-weight:300;letter-spacing:-.04em;line-height:1;margin:26px 0 26px}
-h1 i{color:var(--accent)}
-.hero-tag{max-width:540px;color:var(--grey);font-size:.98rem;font-weight:300;line-height:1.85}
-.hero-links{display:flex;gap:36px;margin-top:48px;flex-wrap:wrap}
-.tlink{font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
-  border-bottom:1px solid var(--line);padding-bottom:7px;transition:.3s}
-.tlink:hover{color:var(--accent);border-color:var(--accent)}
-
-/* COUNTDOWN */
-.count{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding:28px 6vw;display:flex;align-items:center;justify-content:center;gap:44px;flex-wrap:wrap}
-.count-label{font-size:.66rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--grey)}
-.count-label b{color:var(--accent);font-weight:600}
-.count-clock{display:flex;gap:30px}
-.count-clock div{min-width:54px;text-align:center}
-.count-clock span{display:block;font-size:1.5rem;font-weight:300;font-variant-numeric:tabular-nums}
-.count-clock small{font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:var(--grey)}
-
-/* SECTIONS */
-section{padding:120px 6vw}
-.inner{max-width:1160px;margin:0 auto}
-.inner.narrow{max-width:760px;margin-left:0}
-.eyebrow{font-size:.64rem;font-weight:600;letter-spacing:.34em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:16px}
-.sec-head h2{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:300;letter-spacing:-.02em;line-height:1.15;max-width:660px}
-.sec-head p{color:var(--grey);font-size:.88rem;font-weight:300;max-width:460px;margin-top:16px}
-
-/* PRODUTOS */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:52px 30px;margin-top:64px}
-.card{cursor:pointer}
-.ph{position:relative;aspect-ratio:4/5;background:var(--panel);border:1px solid var(--line);
-  overflow:hidden;display:flex;align-items:center;justify-content:center;transition:border-color .3s}
-.card:hover .ph{border-color:rgba(255,255,255,.28)}
-.ph span{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:#5a5f62}
-.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.card:hover .ph img{transform:scale(1.03)}
-.card h3{font-size:.95rem;font-weight:500;margin:18px 0 8px}
-.card p{color:var(--grey);font-size:.8rem;font-weight:300;line-height:1.7;margin-bottom:16px}
-.meta{display:flex;align-items:center;justify-content:space-between}
-.stock{font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-.go{font-size:.62rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);
-  border-bottom:1px solid var(--line);padding-bottom:3px;transition:.25s}
-.go:hover{color:var(--accent);border-color:var(--accent)}
-
-/* VALE A PENA */
-.chips{display:flex;flex-wrap:wrap;gap:30px;margin:38px 0 42px}
-.chip{background:none;border:0;border-bottom:1px solid var(--line);padding:0 0 7px;
-  color:var(--grey);font-family:inherit;font-size:.72rem;font-weight:500;letter-spacing:.14em;
-  text-transform:uppercase;cursor:pointer;transition:.25s}
-.chip.active,.chip:hover{color:var(--accent);border-color:var(--accent)}
-.answer{border-left:1px solid var(--accent);padding-left:24px;min-height:120px}
-.answer h3{font-size:1.05rem;font-weight:500;margin-bottom:10px}
-.answer p{color:var(--grey);font-size:.9rem;font-weight:300}
-
-/* DESTAQUES — lista editorial */
-.dest{border-top:1px solid var(--line);margin-top:64px}
-.erow{display:grid;grid-template-columns:88px minmax(170px,.9fr) 1.5fr;gap:26px;align-items:baseline;
-  padding:34px 8px;border-bottom:1px solid var(--line);position:relative;transition:background .3s}
-.erow::after{content:'';position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--accent);transition:width .5s ease}
-.erow:hover{background:rgba(255,255,255,.02)}
-.erow:hover::after{width:100%}
-.erow .en{font-size:clamp(1.3rem,2.6vw,2rem);font-weight:300;color:rgba(255,255,255,.22);line-height:1;transition:color .3s}
-.erow:hover .en{color:var(--accent)}
-.erow h3{font-size:clamp(1rem,2vw,1.35rem);font-weight:500;transition:transform .3s}
-.erow:hover h3{transform:translateX(6px)}
-.erow p{color:var(--grey);font-size:.86rem;font-weight:300}
-
-/* LOOKBOOK */
-.look-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:56px}
-@media(min-width:900px){.look-grid{grid-template-columns:repeat(4,1fr)}}
-.look-item{display:block;width:100%;padding:0;border:1px solid var(--line);background:var(--panel);
-  cursor:pointer;overflow:hidden;aspect-ratio:2/3;position:relative}
-.look-item img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9;transition:transform .6s,opacity .4s}
-.look-item:hover img{transform:scale(1.04);opacity:1}
-.look-item::after{content:'';position:absolute;inset:0;border:1px solid transparent;transition:.3s}
-.look-item:hover::after{border-color:var(--accent)}
-.glb{position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center;
-  background:rgba(5,5,6,.97);padding:5vh 70px}
-.glb.on{display:flex}
-.glb>img{max-width:100%;max-height:100%;object-fit:contain;border:1px solid var(--line);animation:lbin .3s ease}
-.glb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:1px solid var(--line);
-  color:var(--grey);width:44px;height:44px;border-radius:50%;font-size:1rem;cursor:pointer;transition:.25s}
-.glb-nav:hover{color:var(--accent);border-color:var(--accent)}
-.glb-prev{left:14px}.glb-next{right:14px}
-.glb .lb-close{position:absolute;top:16px;right:22px;z-index:2}
-@media(max-width:720px){.glb{padding:60px 12px}.glb-nav{display:none}}
-
-/* MANIFESTO */
-.sobre p.big{font-size:clamp(1.3rem,3vw,1.85rem);font-weight:300;line-height:1.55;max-width:780px}
-.sobre p.big em{font-style:normal;color:var(--accent)}
-.sobre .fine{margin-top:26px;color:var(--grey);font-size:.85rem;font-weight:300;max-width:560px;line-height:1.85}
-.sobre-links{display:flex;gap:34px;margin-top:42px;flex-wrap:wrap}
-
-/* FOOTER */
-footer{border-top:1px solid var(--line);padding:32px 6vw;display:flex;justify-content:space-between;
-  gap:16px;flex-wrap:wrap;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grey)}
-footer b{color:var(--white);font-weight:600}
-footer a{transition:.25s}
-footer a:hover{color:var(--accent)}
-
-/* LIGHTBOX */
-.lb{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;
-  padding:5vw;background:rgba(5,5,6,.94)}
-.lb.on{display:flex}
-.lb-inner{display:flex;gap:34px;max-width:880px;width:100%;background:var(--ink);
-  border:1px solid var(--line);padding:28px;position:relative;animation:lbin .3s ease}
-@keyframes lbin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.lb-img{flex:1 1 320px;aspect-ratio:4/5;max-height:68vh;border:1px solid var(--line);
-  background:var(--panel);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.lb-img img{width:100%;height:100%;object-fit:cover;display:none}
-.lb-img.has-img img{display:block}
-.lb-img::after{content:'Foto em breve';font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:#5a5f62}
-.lb-img.has-img::after{display:none}
-.lb-info{flex:1 1 240px;display:flex;flex-direction:column;justify-content:center;gap:14px}
-.lb-info h3{font-size:1.3rem;font-weight:300}
-.lb-info p{color:var(--grey);font-size:.88rem;font-weight:300}
-.lb-close{position:absolute;top:12px;right:16px;background:none;border:0;color:var(--grey);
-  font-size:1.4rem;cursor:pointer;transition:.2s}
-.lb-close:hover{color:var(--accent);transform:rotate(90deg)}
-
-/* WHATSAPP FLOAT */
-.wpp-float{position:fixed;right:20px;bottom:20px;z-index:60;width:52px;height:52px;border-radius:50%;
-  background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.35rem;
-  opacity:.92;transition:.3s}
-.wpp-float:hover{opacity:1;transform:translateY(-3px)}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
-.reveal.on{opacity:1;transform:none}
-
-@media(max-width:860px){
-  header{padding:118px 6vw 70px}
-  .hero-inner{grid-template-columns:1fr;gap:40px}
-  .hero-photo{max-width:min(330px,74vw);justify-self:start;max-height:50svh}
-  .links{position:fixed;inset:0 0 auto;top:57px;flex-direction:column;gap:22px;background:rgba(10,10,11,.97);
-    padding:30px 6vw;display:none;border-bottom:1px solid var(--line)}
-  .links.open{display:flex}
-  .burger{display:block}
-  .zap{display:none}
-  .erow{grid-template-columns:56px 1fr;gap:4px 14px;padding:24px 4px}
-  .erow p{grid-column:2/-1}
-  .lb-inner{flex-direction:column;gap:18px;padding:20px}
-  .lb-img{max-height:44vh}
-  section{padding:84px 6vw}
-}
-</style>
-</head>
-<body>
-
-<nav>
-  <div class="inner">
-    <a class="logo" href="#top">ALPACA<i>°</i></a>
-    <div class="links" id="links">
-      <a href="#drops">Drops</a>
-      <a href="#vpm">Vale a pena?</a>
-      <a href="#destaques">Destaques</a>
-      <a href="sobre.html">Sobre</a>
-    </div>
-    <a class="zap" href="https://wa.me/5548999990000?text=Opa!%20Quero%20saber%20do%20DROP%20que%20vi%20no%20site%20da%20Alpaca" target="_blank" rel="noopener">Chamar no Zap</a>
-    <button class="burger" id="burger" aria-label="Menu">☰</button>
-  </div>
-</nav>
-
-<header id="top">
-  <div class="hero-inner">
-    <div class="hero-txt">
-      <div class="kicker">Streetwear em drops · Criciúma/SC</div>
-      <h1>ALPACA<i>°</i></h1>
-      <p class="hero-tag">Curadoria de streetwear em drops. Sem estoque infinito: peça escolhida, peça vendida, peça na sua mão — motoboy em Criciúma e envio pra todo o Brasil.</p>
-      <div class="hero-links">
-        <a class="tlink" href="#drops">Ver o drop</a>
-        <a class="tlink" href="https://instagram.com/veltrix_conceito" target="_blank" rel="noopener">Instagram</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ALPACA° | Menos ruído. Mais presença.</title>
+    <meta
+      name="description"
+      content="Conheça a Alpaca: streetwear, curadoria e essenciais com personalidade. Explore a seleção e a campanha da marca."
+    />
+    <meta name="theme-color" content="#f1f0e9" />
+    <link rel="canonical" href="https://mateusrampi8-bot.github.io/alpaca/" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="ALPACA" />
+    <meta property="og:title" content="ALPACA° | Menos ruído. Mais presença." />
+    <meta
+      property="og:description"
+      content="Conheça a Alpaca: streetwear, curadoria e essenciais com personalidade. Explore a seleção e a campanha da marca."
+    />
+    <meta
+      property="og:url"
+      content="https://mateusrampi8-bot.github.io/alpaca/"
+    />
+    <meta
+      property="og:image"
+      content="https://mateusrampi8-bot.github.io/alpaca/og-cover.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="assets/site.css" />
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header" id="top">
+      <nav class="nav wrap" aria-label="Navegação principal">
+        <a class="logo" href="index.html" aria-label="Alpaca, início"
+          >ALPACA<span>°</span></a
+        >
+        <div class="nav-links" id="nav-links">
+          <a href="index.html#drops" aria-current="page">A seleção</a
+          ><a href="sobre.html">O conceito</a><a href="#lookbook">Lookbook</a
+          ><a href="#contato">Contato</a>
+        </div>
+        <a class="nav-cta" href="index.html#drops"
+          >Explore a Alpaca
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 12h15M13 5l7 7-7 7" /></svg></a
+        ><button
+          class="menu-toggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span></span><span></span>
+        </button>
+      </nav>
+    </header>
+    <main id="conteudo">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">Curadoria · Drops · Atitude</div>
+          <h1 id="hero-title">Menos ruído.<br />Mais <em>presença.</em></h1>
+          <p>
+            Streetwear com intenção. Uma curadoria de peças essenciais para quem
+            encontra identidade nos detalhes.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#drops"
+              >Explorar a seleção
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 12h15M13 5l7 7-7 7" /></svg></a
+            ><a class="text-link" href="sobre.html">O nosso conceito ↗</a>
+          </div>
+          <div class="hero-note">Criciúma, SC · Independente por essência</div>
+        </div>
+        <div
+          class="hero-art"
+          aria-label="Composição de fotos da campanha Alpaca"
+        >
+          <div class="art-orbit" aria-hidden="true"></div>
+          <div class="image-stack">
+            <div class="art-frame art-back">
+              <img
+                src="img/lookbook/lb-01.jpg"
+                alt="Campanha Alpaca em tons claros"
+                width="832"
+                height="1248"
+              />
+            </div>
+            <div class="art-frame art-front">
+              <img
+                src="img/hero.jpg"
+                alt="Campanha Alpaca: modelo com camiseta verde e casaco escuro"
+                width="832"
+                height="1248"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="art-tag">
+              ALPACA / CONCEITO<b>Essencial.<br />Por natureza.</b>
+            </div>
+          </div>
+          <span class="vertical-note" aria-hidden="true"
+            >FORMA / TEXTURA / IDENTIDADE</span
+          >
+          <div class="art-caption">
+            <span>Estudo de essenciais / 001</span
+            ><span>Explore uma nova perspectiva ↗</span>
+          </div>
+        </div>
+      </section>
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Menos ruído. Mais presença. <i>✳</i></span
+          ><span>Curadoria com intenção <i>✳</i></span
+          ><span>Essencial é o que permanece <i>✳</i></span
+          ><span>Menos ruído. Mais presença. <i>✳</i></span
+          ><span>Curadoria com intenção <i>✳</i></span
+          ><span>Essencial é o que permanece <i>✳</i></span
+          ><span>Menos ruído. Mais presença. <i>✳</i></span
+          ><span>Curadoria com intenção <i>✳</i></span
+          ><span>Essencial é o que permanece <i>✳</i></span
+          ><span>Menos ruído. Mais presença. <i>✳</i></span
+          ><span>Curadoria com intenção <i>✳</i></span
+          ><span>Essencial é o que permanece <i>✳</i></span>
+        </div>
       </div>
-    </div>
-    <div class="hero-photo">
-      <img src="img/hero.jpg" alt="Campanha ALPACA — camiseta verde com sobretudo" fetchpriority="high">
-    </div>
-  </div>
-</header>
-
-<div class="count reveal">
-  <div class="count-label">Próximo drop · <b>DROP 03</b></div>
-  <div class="count-clock" id="clock">
-    <div><span id="dd">--</span><small>dias</small></div>
-    <div><span id="hh">--</span><small>hrs</small></div>
-    <div><span id="mm">--</span><small>min</small></div>
-    <div><span id="ss">--</span><small>seg</small></div>
-  </div>
-</div>
-
-<section id="drops">
-  <div class="inner">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Curadoria #002</div>
-      <h2>O 2º drop — últimas peças</h2>
-      <p>Tudo que você vê abaixo é o que restou. Acabou, foi — drop novo só na próxima semana.</p>
-    </div>
-    <div class="grid">
-      <div class="card reveal" data-name="Tee Preta · Jacaré" data-desc="Malha premium, bordado lateral. A básica que resolve look inteiro." data-stock="Restam 4" data-img="img/produtos/tee-jacare.jpg" data-buy="https://wa.me/5548999990000?text=Quero%20a%20Tee%20Preta%20Jacar%C3%A9">
-        <div class="ph"><span>Crocodile</span><img src="img/produtos/tee-jacare.jpg" alt="Tee Preta Jacaré" loading="lazy" onerror="this.remove()"></div>
-        <h3>Tee Preta · Jacaré</h3>
-        <p>Malha premium, bordado lateral. A básica que resolve look inteiro.</p>
-        <div class="meta"><span class="stock">Restam 4</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20a%20Tee%20Preta%20Jacar%C3%A9" target="_blank" rel="noopener">Comprar →</a></div>
+      <section class="section wrap" id="drops">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">Seleção Alpaca / 002</div>
+            <h2>Escolhido a dedo.<br />Feito para vestir.</h2>
+          </div>
+          <p>
+            Explore as peças da nossa curadoria. Simplicidade na composição,
+            personalidade no detalhe.
+          </p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrar a seleção">
+          <button class="filter" data-filter="all" aria-pressed="true">
+            Todas as peças</button
+          ><button class="filter" data-filter="tees" aria-pressed="false">
+            Camisetas</button
+          ><button class="filter" data-filter="shorts" aria-pressed="false">
+            Shorts</button
+          ><button class="filter" data-filter="sport" aria-pressed="false">
+            Sport
+          </button>
+        </div>
+        <div class="product-grid">
+          <article class="product reveal" data-category="tees">
+            <button
+              class="product-image"
+              data-preview="img/produtos/tee-jacare.jpg"
+              data-title="Tee preta · Jacaré"
+              data-description="Malha escura e bordado discreto. Um essencial da curadoria. Consulte tamanhos e disponibilidade nos canais da marca."
+              data-group="products"
+              aria-label="Ver detalhes: Tee preta · Jacaré"
+            >
+              <img
+                src="img/produtos/tee-jacare.jpg"
+                alt="Camiseta preta com bordado de jacaré"
+                width="832"
+                height="1248"
+                loading="lazy"
+              /><span class="product-number">SELEÇÃO / 01</span
+              ><span class="image-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="product-meta">
+              <h3>Tee preta · Jacaré</h3>
+              <span aria-hidden="true">↗</span>
+            </div>
+            <p>Malha escura e bordado discreto. Um essencial da curadoria.</p>
+          </article>
+          <article class="product reveal" data-category="tees">
+            <button
+              class="product-image"
+              data-preview="img/produtos/tee-listra.jpg"
+              data-title="Tee off-white · Listra"
+              data-description="Tons claros, detalhe na manga e presença sem excesso. Consulte tamanhos e disponibilidade nos canais da marca."
+              data-group="products"
+              aria-label="Ver detalhes: Tee off-white · Listra"
+            >
+              <img
+                src="img/produtos/tee-listra.jpg"
+                alt="Camiseta off-white com detalhe de listra"
+                width="832"
+                height="1248"
+                loading="lazy"
+              /><span class="product-number">SELEÇÃO / 02</span
+              ><span class="image-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="product-meta">
+              <h3>Tee off-white · Listra</h3>
+              <span aria-hidden="true">↗</span>
+            </div>
+            <p>Tons claros, detalhe na manga e presença sem excesso.</p>
+          </article>
+          <article class="product reveal" data-category="shorts">
+            <button
+              class="product-image"
+              data-preview="img/produtos/shorts-sarja.jpg"
+              data-title="Shorts sarja preto"
+              data-description="Uma base versátil para acompanhar o seu ritmo. Consulte tamanhos e disponibilidade nos canais da marca."
+              data-group="products"
+              aria-label="Ver detalhes: Shorts sarja preto"
+            >
+              <img
+                src="img/produtos/shorts-sarja.jpg"
+                alt="Shorts de sarja preto da seleção Alpaca"
+                width="832"
+                height="1248"
+                loading="lazy"
+              /><span class="product-number">SELEÇÃO / 03</span
+              ><span class="image-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="product-meta">
+              <h3>Shorts sarja preto</h3>
+              <span aria-hidden="true">↗</span>
+            </div>
+            <p>Uma base versátil para acompanhar o seu ritmo.</p>
+          </article>
+          <article class="product reveal" data-category="sport">
+            <button
+              class="product-image"
+              data-preview="img/produtos/kit-sport.jpg"
+              data-title="Kit sport"
+              data-description="O lado esportivo da nossa seleção de streetwear. Consulte tamanhos e disponibilidade nos canais da marca."
+              data-group="products"
+              aria-label="Ver detalhes: Kit sport"
+            >
+              <img
+                src="img/produtos/kit-sport.jpg"
+                alt="Conjunto esportivo da curadoria Alpaca"
+                width="832"
+                height="1248"
+                loading="lazy"
+              /><span class="product-number">SELEÇÃO / 04</span
+              ><span class="image-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="product-meta">
+              <h3>Kit sport</h3>
+              <span aria-hidden="true">↗</span>
+            </div>
+            <p>O lado esportivo da nossa seleção de streetwear.</p>
+          </article>
+        </div>
+        <div class="collection-note">
+          <span id="filter-result" role="status" aria-live="polite"
+            >04 peças na seleção</span
+          ><span>Consulte tamanhos e disponibilidade nos canais da marca.</span>
+        </div>
+      </section>
+      <section class="manifesto" id="manifesto">
+        <div class="wrap manifesto-inner">
+          <div class="eyebrow reveal">O nosso manifesto</div>
+          <div>
+            <h2 class="reveal">
+              A <em>Alpaca</em> é uma casa de conceito em streetwear.
+            </h2>
+            <div class="manifesto-text reveal">
+              <p>
+                Selecionamos, testamos e vestimos. Cada drop é uma coleção
+                fechada: poucas peças, curadoria grande, zero estoque parado.
+              </p>
+              <a class="text-link" href="sobre.html#conceito"
+                >Conheça o conceito
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 12h15M13 5l7 7-7 7" /></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="manifesto-word" aria-hidden="true">ALPACA</div>
+      </section>
+      <section class="section wrap editorial" id="conceito">
+        <div class="editorial-image reveal">
+          <img
+            src="img/lookbook/lb-03.jpg"
+            alt="Campanha Alpaca: camiseta branca e casaco em uma composição minimalista"
+            width="832"
+            height="1248"
+            loading="lazy"
+          /><span class="photo-label">ALPACA / ESTUDO DE PRESENÇA</span>
+        </div>
+        <div class="editorial-copy">
+          <div class="eyebrow reveal">Da escolha ao vestir</div>
+          <h2 class="reveal">O detalhe faz<br />o essencial.</h2>
+          <p class="reveal">
+            A nossa visão de streetwear começa na escolha. Uma peça precisa
+            fazer sentido no corpo, na rotina e na forma como você se expressa.
+          </p>
+          <div class="principles">
+            <div class="principle reveal">
+              <span>01 /</span>
+              <div>
+                <h3>Menos excesso.</h3>
+                <p>
+                  Uma seleção com intenção. Espaço para o que você realmente
+                  quer vestir.
+                </p>
+              </div>
+            </div>
+            <div class="principle reveal">
+              <span>02 /</span>
+              <div>
+                <h3>Mais identidade.</h3>
+                <p>
+                  Caimento, textura e detalhes. Presença que não depende de
+                  gritar.
+                </p>
+              </div>
+            </div>
+            <div class="principle reveal">
+              <span>03 /</span>
+              <div>
+                <h3>No seu ritmo.</h3>
+                <p>
+                  Peças para compor o seu dia. O estilo é seu; a curadoria é
+                  nossa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section lookbook" id="lookbook">
+        <div class="wrap">
+          <div class="section-heading reveal">
+            <div>
+              <div class="eyebrow">Campanha 001 / Lookbook</div>
+              <h2>Essencial é<br />o que permanece.</h2>
+            </div>
+            <p>
+              Luz, forma e atitude.<br />O universo Alpaca em três perspectivas.
+            </p>
+          </div>
+          <div class="gallery">
+            <button
+              class="gallery-item reveal"
+              data-preview="img/lookbook/lb-01.jpg"
+              data-title="O essencial, em cena."
+              data-description="Campanha 001 · Alpaca. Uma perspectiva sobre o que permanece: linhas simples, tons essenciais e atitude."
+              data-group="campaign"
+              aria-label="Ampliar campanha, foto 1"
+            >
+              <img
+                src="img/lookbook/lb-01.jpg"
+                alt="Modelo com camiseta branca sentado em cadeira de estúdio"
+                width="832"
+                height="1248"
+                loading="lazy"
+              /><span aria-hidden="true">↗</span></button
+            ><button
+              class="gallery-item reveal"
+              data-preview="img/lookbook/lb-02.jpg"
+              data-title="O essencial, em cena."
+              data-description="Campanha 001 · Alpaca. Uma perspectiva sobre o que permanece: linhas simples, tons essenciais e atitude."
+              data-group="campaign"
+              aria-label="Ampliar campanha, foto 2"
+            >
+              <img
+                src="img/lookbook/lb-02.jpg"
+                alt="Modelo com camiseta preta em cenário de estúdio"
+                width="832"
+                height="1248"
+                loading="lazy"
+              /><span aria-hidden="true">↗</span></button
+            ><button
+              class="gallery-item reveal"
+              data-preview="img/lookbook/lb-04.jpg"
+              data-title="O essencial, em cena."
+              data-description="Campanha 001 · Alpaca. Uma perspectiva sobre o que permanece: linhas simples, tons essenciais e atitude."
+              data-group="campaign"
+              aria-label="Ampliar campanha, foto 4"
+            >
+              <img
+                src="img/lookbook/lb-04.jpg"
+                alt="Modelo de perfil com camiseta branca da campanha Alpaca"
+                width="832"
+                height="1248"
+                loading="lazy"
+              /><span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <div class="gallery-caption">
+            <span>Alpaca · Estudo de essenciais</span
+            ><span>Toque nas imagens para explorar ↗</span>
+          </div>
+        </div>
+      </section>
+      <section class="section wrap faq" id="duvidas">
+        <div class="reveal">
+          <div class="eyebrow">Antes de vestir</div>
+          <h2>Conversa<br />sem ruído.</h2>
+        </div>
+        <div class="reveal">
+          <details>
+            <summary>Como funciona a curadoria?</summary>
+            <p>
+              Selecionamos as peças em drops: coleções fechadas com uma proposta
+              própria. Aqui você explora os detalhes e conhece o universo da
+              Alpaca antes de escolher.
+            </p>
+          </details>
+          <details>
+            <summary>Como consultar tamanhos e disponibilidade?</summary>
+            <p>
+              A seleção do site apresenta as peças da marca. Para saber quais
+              tamanhos estão disponíveis, consulte os canais da Alpaca. A
+              disponibilidade de cada peça pode mudar entre os drops.
+            </p>
+          </details>
+          <details>
+            <summary>Onde encontro a Alpaca?</summary>
+            <p>
+              A Alpaca é de Criciúma, Santa Catarina. Acompanhe os canais da
+              marca para conhecer os próximos drops e combinar o atendimento.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="contact" id="contato">
+        <div class="wrap contact-inner">
+          <div class="reveal">
+            <div class="eyebrow">Continue no nosso universo</div>
+            <h2>O próximo detalhe<br />é seu.</h2>
+            <p>
+              Acompanhe as novidades, conheça a seleção e encontre a sua próxima
+              peça.
+            </p>
+          </div>
+          <div class="contact-links reveal">
+            <a
+              class="button"
+              href="https://instagram.com/veltrix_conceito"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Explorar no Instagram
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 12h15M13 5l7 7-7 7" /></svg></a
+            ><a class="text-link" href="index.html#drops"
+              >Rever a seleção
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 12h15M13 5l7 7-7 7" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <div>
+            <a class="logo" href="#top">ALPACA<span>°</span></a>
+            <p style="margin-top: 15px">
+              Curadoria. Drops. Atitude.<br />Criciúma, Santa Catarina.
+            </p>
+          </div>
+          <div class="footer-nav">
+            <a href="index.html#drops">A seleção</a
+            ><a href="sobre.html">O conceito</a><a href="#lookbook">Lookbook</a>
+          </div>
+          <a class="text-link" href="#top">Voltar ao topo ↑</a>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Alpaca. Todos os direitos reservados.</span
+          ><button class="motion-control" aria-pressed="false">
+            Pausar animações</button
+          ><span>Essencial é o que permanece.</span>
+        </div>
       </div>
-      <div class="card reveal" data-name="Tee Off-White · Listra" data-desc="Punho com listra clássica. Corte amplo, ombro caído, presença." data-stock="Restam 2" data-img="img/produtos/tee-listra.jpg" data-buy="https://wa.me/5548999990000?text=Quero%20a%20Tee%20Off-White">
-        <div class="ph"><span>Tommy</span><img src="img/produtos/tee-listra.jpg" alt="Tee Off-White Listra" loading="lazy" onerror="this.remove()"></div>
-        <h3>Tee Off-White · Listra</h3>
-        <p>Punho com listra clássica. Corte amplo, ombro caído, presença.</p>
-        <div class="meta"><span class="stock">Restam 2</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20a%20Tee%20Off-White" target="_blank" rel="noopener">Comprar →</a></div>
+    </footer>
+    <dialog class="dialog" aria-labelledby="preview-title">
+      <button class="dialog-close" aria-label="Fechar visualização" autofocus>
+        ×
+      </button>
+      <div class="dialog-content">
+        <img class="dialog-image" id="preview-image" alt="" />
+        <div class="dialog-copy">
+          <div class="eyebrow">Alpaca / Em detalhe</div>
+          <h2 id="preview-title"></h2>
+          <p id="preview-description"></p>
+          <a
+            class="text-link"
+            href="#contato"
+            onclick="this.closest('dialog').close()"
+            >Acompanhar a marca
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 12h15M13 5l7 7-7 7" /></svg
+          ></a>
+          <div class="dialog-nav">
+            <button data-prev aria-label="Imagem anterior">← Anterior</button
+            ><span id="preview-counter" aria-live="polite"></span
+            ><button data-next aria-label="Próxima imagem">Próxima →</button>
+          </div>
+        </div>
       </div>
-      <div class="card reveal" data-name="Shorts Sarja Preto" data-desc="Cordão com ponta metálica, caimento mid. Verão não perdoa, você não precisa." data-stock="Último par" data-img="img/produtos/shorts-sarja.jpg" data-buy="https://wa.me/5548999990000?text=Quero%20o%20Shorts%20Sarja">
-        <div class="ph"><span>Disel</span><img src="img/produtos/shorts-sarja.jpg" alt="Shorts Sarja Preto" style="object-position:50% 74%" loading="lazy" onerror="this.remove()"></div>
-        <h3>Shorts Sarja Preto</h3>
-        <p>Cordão com ponta metálica, caimento mid. Verão não perdoa, você não precisa.</p>
-        <div class="meta"><span class="stock">Último par</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20o%20Shorts%20Sarja" target="_blank" rel="noopener">Comprar →</a></div>
-      </div>
-      <div class="card reveal" data-name="Kit Sport · Tags Original" data-desc="Conjunto de treino com tags. O review completo tá no perfil: &quot;vale a pena mesmo?&quot;" data-stock="Restam 3" data-img="img/produtos/kit-sport.jpg" data-buy="https://wa.me/5548999990000?text=Quero%20o%20Kit%20Sport">
-        <div class="ph"><span>Nike Kit</span><img src="img/produtos/kit-sport.jpg" alt="Kit Sport Tags Original" loading="lazy" onerror="this.remove()"></div>
-        <h3>Kit Sport · Tags Original</h3>
-        <p>Conjunto de treino com tags. O review completo tá no perfil: "vale a pena mesmo?".</p>
-        <div class="meta"><span class="stock">Restam 3</span><a class="go" href="https://wa.me/5548999990000?text=Quero%20o%20Kit%20Sport" target="_blank" rel="noopener">Comprar →</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="vpm" id="vpm">
-  <div class="inner narrow">
-    <div class="sec-head reveal">
-      <div class="eyebrow">A série que ninguém corta</div>
-      <h2>Vale a pena mesmo?</h2>
-      <p>A gente compra pra testar. Se não vale, a gente fala aqui mesmo.</p>
-    </div>
-    <div class="reveal">
-      <div class="chips" id="chips">
-        <button class="chip active" data-a="0">Grife barata?</button>
-        <button class="chip" data-a="1">Vem original?</button>
-        <button class="chip" data-a="2">Tamanho serve?</button>
-        <button class="chip" data-a="3">Demora?</button>
-      </div>
-      <div class="answer" id="answer">
-        <h3>Grife barata?</h3>
-        <p>Barato não é o preço baixo — é pagar caro no que não entrega. A Alpaca caça o melhor preço da peça autêntica e passa pra você com curadoria que você não tem tempo de fazer. Vale a pena: sim.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="destaques">
-  <div class="inner">
-    <div class="sec-head reveal">
-      <div class="eyebrow">O ecossistema</div>
-      <h2>Mais que loja</h2>
-      <p>O perfil é o catálogo ao vivo. O site é onde você confere sem story vencido.</p>
-    </div>
-    <div class="dest">
-      <div class="erow reveal"><span class="en">01</span><h3>Vendidos</h3><p>Prova real de quem já vestiu o drop. Sem print fake, sem promessa vazia.</p></div>
-      <div class="erow reveal"><span class="en">02</span><h3>Embalagem</h3><p>Unboxing de marca: o pacote chega cheirando a novo e vira story de quem recebe.</p></div>
-      <div class="erow reveal"><span class="en">03</span><h3>Influência</h3><p>Peça na rua, no corpo de quem usa. Review sincero, inclusive quando dá nota baixa.</p></div>
-      <div class="erow reveal"><span class="en">04</span><h3>Músicas</h3><p>A trilha do drop é parte do conceito. Reels com som autoral de quem entende o jogo.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="look" id="lookbook">
-  <div class="inner">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Campanha 001</div>
-      <h2>Essencial é o que permanece</h2>
-      <p>A primeira campanha ALPACA — básicos bem feitos, luz de estúdio e nada além disso.</p>
-    </div>
-    <div class="look-grid">
-      <button class="look-item reveal" data-full="img/lookbook/lb-01.jpg" aria-label="Ampliar foto 1"><img src="img/lookbook/lb-01.jpg" alt="Campanha ALPACA — camiseta branca na cadeira" loading="lazy"></button>
-      <button class="look-item reveal" data-full="img/lookbook/lb-02.jpg" aria-label="Ampliar foto 2"><img src="img/lookbook/lb-02.jpg" alt="Campanha ALPACA — camiseta preta no baú" loading="lazy"></button>
-      <button class="look-item reveal" data-full="img/lookbook/lb-03.jpg" aria-label="Ampliar foto 3"><img src="img/lookbook/lb-03.jpg" alt="Campanha ALPACA — camiseta branca com casaco" loading="lazy"></button>
-      <button class="look-item reveal" data-full="img/lookbook/lb-04.jpg" aria-label="Ampliar foto 4"><img src="img/lookbook/lb-04.jpg" alt="Campanha ALPACA — camiseta branca de perfil" loading="lazy"></button>
-    </div>
-  </div>
-</section>
-
-<section class="sobre" id="sobre">
-  <div class="inner">
-    <div class="reveal">
-      <div class="eyebrow">Manifesto</div>
-      <p class="big">Streetwear não é etiqueta — é <em>conceito</em>. A gente não empilha roupa em arara: seleciona, testa, veste e mostra o que sobrou. <em>Drop pequeno, curadoria grande.</em></p>
-      <p class="fine">Alpaca · Criciúma - SC · Atendimento segunda a sábado pelo direct e WhatsApp · Entrega por motoboy no mesmo dia em Criciúma e região · Envio com rastreio para todo o Brasil.</p>
-      <div class="sobre-links">
-        <a class="tlink" href="sobre.html">Conhecer a Alpaca →</a>
-        <a class="tlink" href="https://instagram.com/veltrix_conceito" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div><b>ALPACA°</b> — Criciúma, SC</div>
-  <div><a href="https://instagram.com/veltrix_conceito" target="_blank" rel="noopener">Instagram</a> · <a href="https://wa.me/5548999990000" target="_blank" rel="noopener">WhatsApp</a> · <a href="sobre.html">Sobre</a></div>
-  <div>© 2026</div>
-</footer>
-
-<a class="wpp-float" href="https://wa.me/5548999990000?text=Opa%20Alpaca!" target="_blank" rel="noopener" title="Falar no WhatsApp">🛒</a>
-
-<!-- LIGHTBOX DO PRODUTO -->
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lbName">
-  <div class="lb-inner">
-    <button class="lb-close" id="lbClose" aria-label="Fechar">✕</button>
-    <div class="lb-img" id="lbImgWrap"><img id="lbImg" src="" alt=""></div>
-    <div class="lb-info">
-      <h3 id="lbName"></h3>
-      <p id="lbDesc"></p>
-      <span class="stock" id="lbStock"></span>
-      <a class="tlink" id="lbBuy" href="#" target="_blank" rel="noopener">Comprar no WhatsApp →</a>
-    </div>
-  </div>
-</div>
-
-<!-- LIGHTBOX DA GALERIA -->
-<div class="glb" id="glb" role="dialog" aria-modal="true">
-  <button class="lb-close" id="glbClose" aria-label="Fechar">✕</button>
-  <button class="glb-nav glb-prev" id="glbPrev" aria-label="Foto anterior">←</button>
-  <img id="glbImg" src="" alt="">
-  <button class="glb-nav glb-next" id="glbNext" aria-label="Próxima foto">→</button>
-</div>
-
-<script>
-/* ---------- COUNTDOWN (DROP 03 — data fixa) ---------- */
-const DROP_DATE = new Date('2026-11-01T20:00:00-03:00').getTime(); // troque aqui a data do próximo drop
-function tick(){
-  let d = Math.max(0, DROP_DATE - Date.now());
-  const dd=Math.floor(d/864e5), hh=Math.floor(d%864e5/36e5), mm=Math.floor(d%36e5/6e4), ss=Math.floor(d%6e4/1e3);
-  document.getElementById('dd').textContent=String(dd).padStart(2,'0');
-  document.getElementById('hh').textContent=String(hh).padStart(2,'0');
-  document.getElementById('mm').textContent=String(mm).padStart(2,'0');
-  document.getElementById('ss').textContent=String(ss).padStart(2,'0');
-  if(d===0){
-    document.querySelector('.count-label').innerHTML='O <b>DROP 03</b> está no ar — corre!';
-    document.getElementById('clock').style.display='none';
-  }
-}
-tick(); setInterval(tick,1000);
-
-/* ---------- VALE A PENA chips ---------- */
-const answers = {
- 0:{h:'Grife barata?',p:'Barato não é o preço baixo — é pagar caro no que não entrega. A Alpaca caça o melhor preço da peça autêntica e passa pra você com curadoria que você não tem tempo de fazer. Vale a pena: sim.'},
- 1:{h:'Vem original?',p:'Toda peça passa por conferência de tags, costura e bordado antes de entrar no drop. Se não passa no crivo, não vira post. Você recebe em embalagem com cara de loja — com direito a filmar o unboxing.'},
- 2:{h:'Tamanho serve?',p:'Aqui o caimento é demonstrado no corpo real, sem truque de clipe. Medidas na descrição e troca facilitada dentro de 7 dias se precisar. Sem envelope, sem surpresa chata.'},
- 3:{h:'Demora?',p:'Criciúma e região: motoboy no mesmo dia da confirmação. Brasil: envio no dia útil seguinte, com rastreio direto no seu WhatsApp. Drop é pra usar esse fim de semana, não no ano que vem.'},
-};
-document.getElementById('chips').addEventListener('click',e=>{
-  const b=e.target.closest('.chip'); if(!b)return;
-  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
-  b.classList.add('active');
-  const a=answers[b.dataset.a];
-  const el=document.getElementById('answer');
-  el.style.opacity=0;
-  setTimeout(()=>{el.innerHTML=`<h3>${a.h}</h3><p>${a.p}</p>`;el.style.opacity=1;},160);
-});
-document.getElementById('answer').style.transition='opacity .16s';
-
-/* ---------- REVEAL on scroll ---------- */
-const io=new IntersectionObserver(es=>es.forEach(x=>x.isIntersecting&&x.target.classList.add('on')),{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-/* ---------- MENU ---------- */
-document.getElementById('burger').onclick=()=>document.getElementById('links').classList.toggle('open');
-document.querySelectorAll('.links a').forEach(a=>a.onclick=()=>document.getElementById('links').classList.remove('open'));
-
-/* ---------- LIGHTBOX PRODUTO ---------- */
-const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'),
-      lbImgWrap=document.getElementById('lbImgWrap'), lbName=document.getElementById('lbName'),
-      lbDesc=document.getElementById('lbDesc'), lbStock=document.getElementById('lbStock'),
-      lbBuy=document.getElementById('lbBuy');
-function openLb(card){
-  lbName.textContent=card.dataset.name;
-  lbDesc.textContent=card.dataset.desc;
-  lbStock.textContent=card.dataset.stock;
-  lbBuy.href=card.dataset.buy;
-  lbImgWrap.classList.remove('has-img'); lbImg.src='';
-  const probe=new Image();
-  probe.onload=()=>{lbImg.src=probe.src;lbImg.alt=card.dataset.name;lbImgWrap.classList.add('has-img');};
-  probe.src=card.dataset.img;
-  lb.classList.add('on'); document.body.style.overflow='hidden';
-}
-function closeLb(){lb.classList.remove('on'); document.body.style.overflow='';}
-document.querySelectorAll('.card[data-name]').forEach(c=>{
-  c.addEventListener('click',e=>{ if(e.target.closest('.go'))return; openLb(c); });
-});
-document.getElementById('lbClose').onclick=closeLb;
-lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
-addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('on'))closeLb()});
-
-/* ---------- LIGHTBOX GALERIA ---------- */
-const glb=document.getElementById('glb'), glbImg=document.getElementById('glbImg');
-const gal=[...document.querySelectorAll('.look-item')];
-let gi=0;
-function showGal(i){
-  gi=(i+gal.length)%gal.length;
-  const btn=gal[gi];
-  glbImg.src=btn.dataset.full;
-  glbImg.alt=btn.querySelector('img').alt;
-}
-function openGal(i){ showGal(i); glb.classList.add('on'); document.body.style.overflow='hidden'; }
-function closeGal(){ glb.classList.remove('on'); document.body.style.overflow=''; }
-gal.forEach((b,i)=>b.addEventListener('click',()=>openGal(i)));
-document.getElementById('glbClose').onclick=closeGal;
-document.getElementById('glbPrev').onclick=e=>{e.stopPropagation();showGal(gi-1)};
-document.getElementById('glbNext').onclick=e=>{e.stopPropagation();showGal(gi+1)};
-glb.addEventListener('click',e=>{if(e.target===glb)closeGal()});
-addEventListener('keydown',e=>{
-  if(!glb.classList.contains('on'))return;
-  if(e.key==='Escape')closeGal();
-  if(e.key==='ArrowLeft')showGal(gi-1);
-  if(e.key==='ArrowRight')showGal(gi+1);
-});
-</script>
-</body>
+    </dialog>
+  </body>
 </html>
