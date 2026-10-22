@@ -1,4 +1,8 @@
 /* Cinematic direction: photography, depth, and scroll-driven perspective. */
+:root {
+  color-scheme: dark;
+  background: #101412;
+}
 .cinematic {
   --paper: #101412;
   --ink: #eeeae1;
@@ -31,12 +35,12 @@
   letter-spacing: 0.08em;
 }
 .cinematic .button {
-  background: #d0d5be;
-  color: #141b16;
-  border: 1px solid #d0d5be;
+  background: #24372a;
+  color: #e5eadc;
+  border: 1px solid #53674b;
 }
 .cinematic .button:hover {
-  background: var(--orange);
+  background: #314834;
   border-color: var(--orange);
 }
 .cinematic .text-link {
@@ -63,8 +67,8 @@
   font-size: 12px;
 }
 .cinematic .ticker {
-  background: #c6cdb4;
-  color: #1a241d;
+  background: #1b2b20;
+  color: #c9d2bc;
   padding-block: 22px;
   transform: rotate(-2deg) scale(1.03);
   position: relative;
@@ -76,7 +80,7 @@
   letter-spacing: 0.15em;
 }
 .cinematic .ticker i {
-  color: #42523d;
+  color: var(--orange);
 }
 
 .scene-story {
@@ -439,8 +443,8 @@
   letter-spacing: 0.12em;
 }
 .cinematic .filter[aria-pressed="true"] {
-  background: #c4cdb2;
-  color: #182017;
+  background: #30432e;
+  color: #e5eadc;
 }
 .cinematic .product-grid {
   grid-template-columns: 1fr 1fr;
@@ -497,8 +501,8 @@
   backdrop-filter: blur(12px);
 }
 .cinematic .image-plus {
-  background: #ccdabd;
-  color: #172012;
+  background: #263c2a;
+  color: #dce7d2;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -524,8 +528,8 @@
   letter-spacing: 0.04em;
 }
 .cinematic .manifesto {
-  background: #c4ccb4;
-  color: #1a251c;
+  background: #142019;
+  color: #e8eadf;
   padding-block: 50px;
   isolation: isolate;
 }
@@ -536,7 +540,7 @@
   gap: 40px;
 }
 .cinematic .manifesto .eyebrow:before {
-  background: #46563e;
+  background: var(--orange);
 }
 .cinematic .manifesto h2 {
   font-size: clamp(55px, 8.6vw, 133px);
@@ -546,7 +550,7 @@
   max-width: 1200px;
 }
 .cinematic .manifesto h2 em {
-  color: #576b48;
+  color: #c0cdaa;
   font-style: italic;
   font-family: Georgia, serif;
   font-weight: 400;
@@ -557,12 +561,12 @@
   margin-top: 50px;
 }
 .cinematic .manifesto-text p {
-  color: #45513e;
+  color: #b2bfaa;
   font-size: 13px;
   line-height: 1.9;
 }
 .cinematic .manifesto-word {
-  color: #1b2a1e0b;
+  color: #c5d5b50b;
   letter-spacing: -0.085em;
   margin-top: 30px;
 }
@@ -622,8 +626,8 @@
   padding-block: 28px;
 }
 .cinematic .contact {
-  background: #bfc9ac;
-  color: #182318;
+  background: #18271d;
+  color: #e4eadb;
   position: relative;
   overflow: hidden;
   padding-block: 110px;
@@ -637,7 +641,7 @@
     600 25vw/1 Manrope,
     sans-serif;
   letter-spacing: -0.08em;
-  color: #20301c0a;
+  color: #c9d9b50a;
   pointer-events: none;
 }
 .cinematic .contact h2 {
@@ -646,12 +650,12 @@
   font-weight: 400;
 }
 .cinematic .contact p {
-  color: #49553f;
+  color: #adbea2;
 }
 .cinematic .contact .button {
-  background: #17271a;
+  background: #243c29;
   color: #e1e6d3;
-  border-color: #17271a;
+  border-color: #53674b;
 }
 .cinematic .contact-links {
   position: relative;
@@ -686,8 +690,8 @@
   background: #0e130e;
 }
 .cinematic .dialog-close {
-  background: #c4cdb4;
-  color: #1c251a;
+  background: #263b29;
+  color: #e4eadb;
 }
 .cinematic .dialog-nav button {
   color: #c2cdb4;
@@ -698,14 +702,14 @@
 .page-curtain {
   position: fixed;
   inset: 0;
-  background: #bcc8a9;
+  background: #1b2e21;
   z-index: 250;
   pointer-events: none;
   display: grid;
   place-items: center;
   clip-path: inset(0 0 100% 0);
   transition: clip-path 0.55s cubic-bezier(0.76, 0, 0.24, 1);
-  color: #142016;
+  color: #e1e8d7;
 }
 .page-curtain span {
   font:
