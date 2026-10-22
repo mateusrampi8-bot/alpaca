@@ -72,50 +72,6 @@ if ("IntersectionObserver" in window) {
   document.documentElement.classList.add("motion-enabled");
 }
 
-const art = document.querySelector(".hero-art");
-const stack = document.querySelector(".image-stack");
-if (
-  art &&
-  stack &&
-  window.matchMedia("(hover: hover) and (pointer: fine)").matches
-) {
-  art.addEventListener("pointermove", (event) => {
-    if (paused || reducedMotion.matches) return;
-    const rect = art.getBoundingClientRect();
-    stack.style.setProperty(
-      "--rx",
-      `${(0.5 - (event.clientY - rect.top) / rect.height) * 10}deg`,
-    );
-    stack.style.setProperty(
-      "--ry",
-      `${((event.clientX - rect.left) / rect.width - 0.5) * 15}deg`,
-    );
-  });
-  art.addEventListener("pointerleave", () => {
-    stack.style.setProperty("--rx", "0deg");
-    stack.style.setProperty("--ry", "0deg");
-  });
-}
-
-// Scroll depth is applied only while the hero is in view, without a rendering loop.
-let scheduled = false;
-function updateDepth() {
-  scheduled = false;
-  if (!art || paused || reducedMotion.matches) return;
-  const offset = Math.min(window.scrollY, 700);
-  art.style.transform = `translateY(${offset * 0.06}px)`;
-}
-window.addEventListener(
-  "scroll",
-  () => {
-    if (!scheduled) {
-      scheduled = true;
-      window.requestAnimationFrame(updateDepth);
-    }
-  },
-  { passive: true },
-);
-
 const filters = document.querySelectorAll(".filter");
 filters.forEach((filter) =>
   filter.addEventListener("click", () => {

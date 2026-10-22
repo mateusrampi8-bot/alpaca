@@ -6,6 +6,8 @@ Site institucional e vitrine da Alpaca, em HTML, CSS e JavaScript, sem etapa de 
 - `sobre.html`: conceito e identidade da marca.
 - `assets/site.css`: identidade visual, layouts responsivos e transições 3D.
 - `assets/site.js`: menu, filtros, galeria e preferências de movimento.
+- `assets/experience.css`: direção escura e cinematográfica, cena 3D e transição entre páginas.
+- `assets/experience.js`: rotação da campanha com a rolagem e navegação com cortina animada.
 - `img/`: fotografias originais da marca.
 
 ## Prévia local
@@ -19,6 +21,8 @@ Atualize as peças em `index.html`, incluindo os atributos `data-preview`, `data
 As duas páginas mantêm o Instagram já existente no projeto: `veltrix_conceito`. O WhatsApp provisório foi retirado; inclua o número oficial quando confirmado. Não há checkout nem sincronização de estoque: a vitrine orienta a consultar a disponibilidade com a marca.
 
 As animações respeitam `prefers-reduced-motion` e podem ser pausadas pelo botão no rodapé. A preferência fica salva neste navegador.
+
+A abertura usa uma cena fixa durante um trecho da rolagem, sem capturar a roda do mouse nem bloquear a navegação. As fotografias ocupam duas faces de um painel CSS 3D. Os controles 01/02 alternam as faces; a rolagem retoma a progressão da cena. Com movimento reduzido, a abertura fica estática e os controles continuam disponíveis. Os links entre as páginas apresentam uma cortina curta; links externos e âncoras mantêm a navegação normal.
 
 ## Publicação
 
