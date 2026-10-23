@@ -9,7 +9,7 @@ Site institucional e vitrine da Alpaca, em HTML, CSS e JavaScript, sem etapa de 
 - `assets/experience.css`: direção escura e cinematográfica, cena 3D e transição entre páginas.
 - `assets/experience.js`: rotação da campanha com a rolagem e navegação com cortina animada.
 - `img/`: fotografias originais da marca.
-- `img/campanha/`: as 14 fotos enviadas para a campanha, usadas na abertura 3D, apresentação e galeria completa.
+- `img/campanha/`: as 15 fotos enviadas para a campanha, usadas na abertura 3D, apresentação e galeria completa.
 
 ## Prévia local
 
