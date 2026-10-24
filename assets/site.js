@@ -1,33 +1,49 @@
 "use strict";
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const motionButton = document.querySelector(".motion-control");
-let paused = reducedMotion.matches;
+const motionButtons = [
+  ...document.querySelectorAll(".motion-control, [data-motion-toggle]"),
+];
+let motionPreference = "auto";
 try {
-  paused = paused || localStorage.getItem("alpaca-motion") === "paused";
+  const saved = localStorage.getItem("alpaca-motion");
+  if (saved === "paused" || saved === "enabled") motionPreference = saved;
 } catch {}
+let paused;
 function setMotion() {
+  paused =
+    motionPreference === "paused" ||
+    (motionPreference !== "enabled" && reducedMotion.matches);
   document.documentElement.classList.toggle("motion-paused", paused);
-  motionButton?.setAttribute("aria-pressed", String(paused));
-  if (motionButton)
-    motionButton.textContent = paused ? "Ativar animações" : "Pausar animações";
+  document.documentElement.classList.toggle(
+    "motion-forced",
+    motionPreference === "enabled",
+  );
+  motionButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(paused));
+    button.textContent = paused ? "Ativar animações" : "Pausar animações";
+  });
   if (paused) {
     const heroArt = document.querySelector(".hero-art");
     if (heroArt) heroArt.style.transform = "";
   }
+  document.dispatchEvent(
+    new CustomEvent("alpaca:motionchange", { detail: { paused } }),
+  );
 }
 setMotion();
-motionButton?.addEventListener("click", () => {
-  paused = !paused;
-  setMotion();
-  try {
-    localStorage.setItem("alpaca-motion", paused ? "paused" : "enabled");
-  } catch {}
-});
-reducedMotion.addEventListener("change", (event) => {
-  paused = event.matches;
-  setMotion();
-});
+motionButtons.forEach((button) =>
+  button.addEventListener("click", () => {
+    motionPreference = paused ? "enabled" : "paused";
+    setMotion();
+    try {
+      localStorage.setItem("alpaca-motion", motionPreference);
+    } catch {}
+  }),
+);
+if (reducedMotion.addEventListener)
+  reducedMotion.addEventListener("change", setMotion);
+else reducedMotion.addListener?.(setMotion);
 
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".nav-links");

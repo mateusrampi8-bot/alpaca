@@ -1333,20 +1333,20 @@ svg {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  html {
+  html:not(.motion-forced) {
     scroll-behavior: auto;
   }
-  *,
-  *:before,
-  *:after {
+  html:not(.motion-forced) *,
+  html:not(.motion-forced) *:before,
+  html:not(.motion-forced) *:after {
     animation: none !important;
     transition: none !important;
   }
-  .motion-enabled .reveal {
+  html:not(.motion-forced).motion-enabled .reveal {
     opacity: 1;
     transform: none;
   }
-  .image-stack {
+  html:not(.motion-forced) .image-stack {
     transform: none !important;
   }
 }

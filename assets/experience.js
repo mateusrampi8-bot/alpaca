@@ -7,7 +7,6 @@
   const visual = story.querySelector(".scene-visual");
   const opening = story.querySelector(".scene-opening");
   const controls = [...story.querySelectorAll("[data-scene]")];
-  const media = matchMedia("(prefers-reduced-motion: reduce)");
   const clamp = (value, min = 0, max = 1) =>
     Math.min(max, Math.max(min, value));
   let manualAngle = null;
@@ -16,7 +15,6 @@
   let lastScroll = window.scrollY;
 
   const motionOff = () =>
-    media.matches ||
     document.documentElement.classList.contains("motion-paused");
   function render() {
     queued = false;
@@ -72,28 +70,27 @@
     { passive: true },
   );
   addEventListener("resize", schedule);
-  media.addEventListener("change", schedule);
-  document
-    .querySelector(".motion-control")
-    ?.addEventListener("click", schedule);
-  if (matchMedia("(hover:hover) and (pointer:fine)").matches) {
-    visual.addEventListener("pointermove", (event) => {
-      if (motionOff()) return;
-      const rect = visual.getBoundingClientRect();
-      story.style.setProperty(
-        "--pointer-x",
-        `${((event.clientX - rect.left) / rect.width - 0.5) * 14}deg`,
-      );
-      story.style.setProperty(
-        "--pointer-y",
-        `${(0.5 - (event.clientY - rect.top) / rect.height) * 10}deg`,
-      );
-    });
-    visual.addEventListener("pointerleave", () => {
-      story.style.setProperty("--pointer-x", "0deg");
-      story.style.setProperty("--pointer-y", "0deg");
-    });
-  }
+  document.addEventListener("alpaca:motionchange", () => {
+    story.style.setProperty("--pointer-x", "0deg");
+    story.style.setProperty("--pointer-y", "0deg");
+    schedule();
+  });
+  visual.addEventListener("pointermove", (event) => {
+    if (motionOff() || event.pointerType === "touch") return;
+    const rect = visual.getBoundingClientRect();
+    story.style.setProperty(
+      "--pointer-x",
+      `${((event.clientX - rect.left) / rect.width - 0.5) * 14}deg`,
+    );
+    story.style.setProperty(
+      "--pointer-y",
+      `${(0.5 - (event.clientY - rect.top) / rect.height) * 10}deg`,
+    );
+  });
+  visual.addEventListener("pointerleave", () => {
+    story.style.setProperty("--pointer-x", "0deg");
+    story.style.setProperty("--pointer-y", "0deg");
+  });
   render();
 
   // Same-origin page navigation uses a short curtain; hashes and external links stay native.
