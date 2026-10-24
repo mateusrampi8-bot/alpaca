@@ -33,8 +33,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="assets/site.css" />
     <link rel="stylesheet" href="assets/experience.css?v=campanha14" />
-    <script src="assets/site.js" defer></script>
+    <script src="assets/site.js?v=line" defer></script>
     <script src="assets/experience.js" defer></script>
+    <link rel="stylesheet" href="assets/line.css" />
+    <script src="assets/line.js" defer></script>
   </head>
   <body class="cinematic">
     <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -44,6 +46,7 @@
           >ALPACA<span>°</span></a
         >
         <div class="nav-links" id="nav-links">
+          <a href="#line">LINE</a>
           <a href="index.html#drops" aria-current="page">A seleção</a
           ><a href="sobre.html">O conceito</a><a href="#lookbook">Lookbook</a
           ><a href="#contato">Contato</a>
@@ -178,6 +181,620 @@
           ><span>Essencial é o que permanece <i>✳</i></span>
         </div>
       </div>
+      <section class="line-collection" id="line" aria-labelledby="line-title">
+        <div class="wrap">
+          <div class="line-heading reveal">
+            <div>
+              <div class="eyebrow">Coleção Alpaca / Camisetas</div>
+              <h2 id="line-title">LINE.</h2>
+            </div>
+            <p>
+              Uma faixa. Uma assinatura. A coleção LINE traduz a identidade
+              Alpaca em 21 combinações de cores.
+            </p>
+          </div>
+          <div class="line-showcase">
+            <div class="reveal">
+              <button
+                class="line-stage"
+                type="button"
+                data-line-open
+                aria-label="Ampliar camiseta LINE: Preto / Rosa"
+              >
+                <img
+                  src="img/line/line-01.webp"
+                  alt="Camiseta LINE Preto / Rosa: frente, costas e detalhe da faixa vertical"
+                  width="1312"
+                  height="1199"
+                  loading="lazy"
+                /><span class="line-zoom" aria-hidden="true"
+                  >Explorar em detalhe ↗</span
+                >
+              </button>
+              <div class="line-caption">
+                <span>Frente / Costas / Detalhe</span
+                ><span class="line-counter">01 / 21</span>
+              </div>
+            </div>
+            <div class="line-details reveal">
+              <div class="eyebrow">Identidade em uma linha</div>
+              <h3>O detalhe que<br />assina o seu estilo.</h3>
+              <p>
+                Faixa vertical, contraste de cores e o símbolo Alpaca. Explore a
+                coleção e encontre a combinação que tem a sua cara.
+              </p>
+              <div class="line-picker">
+                <div class="line-picker-label" id="line-picker-label">
+                  Escolha sua combinação
+                </div>
+                <p id="line-color" role="status" aria-live="polite">
+                  Preto / Rosa
+                </p>
+                <div
+                  class="line-swatches"
+                  role="radiogroup"
+                  aria-labelledby="line-picker-label"
+                >
+                  <button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="true"
+                    aria-label="Preto / Rosa"
+                    tabindex="0"
+                    title="Preto / Rosa"
+                    data-line-choice="0"
+                    data-color="Preto / Rosa"
+                    style="--tone: #171717; --stripe: #d995ab"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Cinza / Preto"
+                    tabindex="-1"
+                    title="Cinza / Preto"
+                    data-line-choice="1"
+                    data-color="Cinza / Preto"
+                    style="--tone: #aeb0ad; --stripe: #202120"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Bordô / Ocre"
+                    tabindex="-1"
+                    title="Bordô / Ocre"
+                    data-line-choice="2"
+                    data-color="Bordô / Ocre"
+                    style="--tone: #67272e; --stripe: #c2a163"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Petróleo / Turquesa"
+                    tabindex="-1"
+                    title="Petróleo / Turquesa"
+                    data-line-choice="3"
+                    data-color="Petróleo / Turquesa"
+                    style="--tone: #073b45; --stripe: #58b1bb"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Areia / Marrom"
+                    tabindex="-1"
+                    title="Areia / Marrom"
+                    data-line-choice="4"
+                    data-color="Areia / Marrom"
+                    style="--tone: #d9cdb3; --stripe: #76523d"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Marinho / Azul claro"
+                    tabindex="-1"
+                    title="Marinho / Azul claro"
+                    data-line-choice="5"
+                    data-color="Marinho / Azul claro"
+                    style="--tone: #142f43; --stripe: #90c3d6"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Terracota / Areia"
+                    tabindex="-1"
+                    title="Terracota / Areia"
+                    data-line-choice="6"
+                    data-color="Terracota / Areia"
+                    style="--tone: #a84c2e; --stripe: #d7c496"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Grafite / Ocre"
+                    tabindex="-1"
+                    title="Grafite / Ocre"
+                    data-line-choice="7"
+                    data-color="Grafite / Ocre"
+                    style="--tone: #282b2a; --stripe: #d1ae62"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Off-white / Marinho"
+                    tabindex="-1"
+                    title="Off-white / Marinho"
+                    data-line-choice="8"
+                    data-color="Off-white / Marinho"
+                    style="--tone: #e4dfce; --stripe: #22394f"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Preto / Vermelho"
+                    tabindex="-1"
+                    title="Preto / Vermelho"
+                    data-line-choice="9"
+                    data-color="Preto / Vermelho"
+                    style="--tone: #181a19; --stripe: #b9504b"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Areia / Telha"
+                    tabindex="-1"
+                    title="Areia / Telha"
+                    data-line-choice="10"
+                    data-color="Areia / Telha"
+                    style="--tone: #ddd0b8; --stripe: #ab684a"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Azul acinzentado / Branco"
+                    tabindex="-1"
+                    title="Azul acinzentado / Branco"
+                    data-line-choice="11"
+                    data-color="Azul acinzentado / Branco"
+                    style="--tone: #687b8b; --stripe: #e7e4d9"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Chumbo / Sálvia"
+                    tabindex="-1"
+                    title="Chumbo / Sálvia"
+                    data-line-choice="12"
+                    data-color="Chumbo / Sálvia"
+                    style="--tone: #303d3f; --stripe: #b9c9b4"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Oliva / Ocre"
+                    tabindex="-1"
+                    title="Oliva / Ocre"
+                    data-line-choice="13"
+                    data-color="Oliva / Ocre"
+                    style="--tone: #3e4528; --stripe: #c6ac65"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Preto / Branco"
+                    tabindex="-1"
+                    title="Preto / Branco"
+                    data-line-choice="14"
+                    data-color="Preto / Branco"
+                    style="--tone: #151616; --stripe: #e6e6dd"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Roxo / Lilás"
+                    tabindex="-1"
+                    title="Roxo / Lilás"
+                    data-line-choice="15"
+                    data-color="Roxo / Lilás"
+                    style="--tone: #462369; --stripe: #b0a1d1"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Rosa / Vinho"
+                    tabindex="-1"
+                    title="Rosa / Vinho"
+                    data-line-choice="16"
+                    data-color="Rosa / Vinho"
+                    style="--tone: #c69c9f; --stripe: #85425b"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Azul claro / Branco"
+                    tabindex="-1"
+                    title="Azul claro / Branco"
+                    data-line-choice="17"
+                    data-color="Azul claro / Branco"
+                    style="--tone: #8eb6d0; --stripe: #eee7d6"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Vermelho / Areia"
+                    tabindex="-1"
+                    title="Vermelho / Areia"
+                    data-line-choice="18"
+                    data-color="Vermelho / Areia"
+                    style="--tone: #901a23; --stripe: #deceae"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Off-white / Preto"
+                    tabindex="-1"
+                    title="Off-white / Preto"
+                    data-line-choice="19"
+                    data-color="Off-white / Preto"
+                    style="--tone: #e4dfce; --stripe: #222624"
+                  >
+                    <span aria-hidden="true"></span></button
+                  ><button
+                    class="line-swatch"
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="Marinho / Azul"
+                    tabindex="-1"
+                    title="Marinho / Azul"
+                    data-line-choice="20"
+                    data-color="Marinho / Azul"
+                    style="--tone: #182d48; --stripe: #458fc5"
+                  >
+                    <span aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+              <a class="button" href="#contato"
+                >Conhecer a coleção LINE <span aria-hidden="true">↗</span></a
+              >
+              <p class="line-fine">
+                Consulte tamanhos e disponibilidade nos canais da marca.
+              </p>
+            </div>
+          </div>
+          <button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-01.webp"
+            data-title="LINE · Preto / Rosa"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Preto / Rosa"
+          >
+            <img
+              alt="Camiseta LINE Preto / Rosa: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-02.webp"
+            data-title="LINE · Cinza / Preto"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Cinza / Preto"
+          >
+            <img
+              alt="Camiseta LINE Cinza / Preto: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-03.webp"
+            data-title="LINE · Bordô / Ocre"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Bordô / Ocre"
+          >
+            <img
+              alt="Camiseta LINE Bordô / Ocre: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-04.webp"
+            data-title="LINE · Petróleo / Turquesa"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Petróleo / Turquesa"
+          >
+            <img
+              alt="Camiseta LINE Petróleo / Turquesa: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-05.webp"
+            data-title="LINE · Areia / Marrom"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Areia / Marrom"
+          >
+            <img
+              alt="Camiseta LINE Areia / Marrom: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-06.webp"
+            data-title="LINE · Marinho / Azul claro"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Marinho / Azul claro"
+          >
+            <img
+              alt="Camiseta LINE Marinho / Azul claro: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-07.webp"
+            data-title="LINE · Terracota / Areia"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Terracota / Areia"
+          >
+            <img
+              alt="Camiseta LINE Terracota / Areia: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-08.webp"
+            data-title="LINE · Grafite / Ocre"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Grafite / Ocre"
+          >
+            <img
+              alt="Camiseta LINE Grafite / Ocre: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-09.webp"
+            data-title="LINE · Off-white / Marinho"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Off-white / Marinho"
+          >
+            <img
+              alt="Camiseta LINE Off-white / Marinho: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-10.webp"
+            data-title="LINE · Preto / Vermelho"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Preto / Vermelho"
+          >
+            <img
+              alt="Camiseta LINE Preto / Vermelho: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-11.webp"
+            data-title="LINE · Areia / Telha"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Areia / Telha"
+          >
+            <img
+              alt="Camiseta LINE Areia / Telha: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-12.webp"
+            data-title="LINE · Azul acinzentado / Branco"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Azul acinzentado / Branco"
+          >
+            <img
+              alt="Camiseta LINE Azul acinzentado / Branco: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-13.webp"
+            data-title="LINE · Chumbo / Sálvia"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Chumbo / Sálvia"
+          >
+            <img
+              alt="Camiseta LINE Chumbo / Sálvia: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-14.webp"
+            data-title="LINE · Oliva / Ocre"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Oliva / Ocre"
+          >
+            <img
+              alt="Camiseta LINE Oliva / Ocre: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-15.webp"
+            data-title="LINE · Preto / Branco"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Preto / Branco"
+          >
+            <img
+              alt="Camiseta LINE Preto / Branco: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-16.webp"
+            data-title="LINE · Roxo / Lilás"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Roxo / Lilás"
+          >
+            <img
+              alt="Camiseta LINE Roxo / Lilás: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-17.webp"
+            data-title="LINE · Rosa / Vinho"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Rosa / Vinho"
+          >
+            <img
+              alt="Camiseta LINE Rosa / Vinho: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-18.webp"
+            data-title="LINE · Azul claro / Branco"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Azul claro / Branco"
+          >
+            <img
+              alt="Camiseta LINE Azul claro / Branco: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-19.webp"
+            data-title="LINE · Vermelho / Areia"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Vermelho / Areia"
+          >
+            <img
+              alt="Camiseta LINE Vermelho / Areia: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-20.webp"
+            data-title="LINE · Off-white / Preto"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Off-white / Preto"
+          >
+            <img
+              alt="Camiseta LINE Off-white / Preto: frente, costas e detalhe da faixa vertical"
+            /></button
+          ><button
+            class="line-preview-source"
+            hidden
+            type="button"
+            data-preview="img/line/line-21.webp"
+            data-title="LINE · Marinho / Azul"
+            data-description="Faixa vertical e símbolo Alpaca. Coleção LINE. Consulte tamanhos e disponibilidade nos canais da marca."
+            data-group="line"
+            aria-label="Ampliar LINE Marinho / Azul"
+          >
+            <img
+              alt="Camiseta LINE Marinho / Azul: frente, costas e detalhe da faixa vertical"
+            />
+          </button>
+        </div>
+      </section>
       <section class="section wrap" id="drops">
         <div class="section-heading reveal">
           <div>

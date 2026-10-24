@@ -111,11 +111,14 @@ function showPreview(index) {
 }
 triggers.forEach((trigger) =>
   trigger.addEventListener("click", () => {
-    opener = trigger;
+    opener =
+      trigger.dataset.group === "line"
+        ? document.querySelector("[data-line-open]")
+        : trigger;
     activeGroup = triggers.filter(
       (item) =>
         item.dataset.group === trigger.dataset.group &&
-        !item.closest("[hidden]"),
+        (item.dataset.group === "line" || !item.closest("[hidden]")),
     );
     showPreview(activeGroup.indexOf(trigger));
     dialog.showModal();

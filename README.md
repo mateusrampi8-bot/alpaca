@@ -8,8 +8,10 @@ Site institucional e vitrine da Alpaca, em HTML, CSS e JavaScript, sem etapa de 
 - `assets/site.js`: menu, filtros, galeria e preferências de movimento.
 - `assets/experience.css`: direção escura e cinematográfica, cena 3D e transição entre páginas.
 - `assets/experience.js`: rotação da campanha com a rolagem e navegação com cortina animada.
+- `assets/line.css` e `assets/line.js`: seção exclusiva da coleção LINE, com 21 combinações, seleção por teclado e ampliação das imagens.
 - `img/`: fotografias originais da marca.
 - `img/campanha/`: as 15 fotos enviadas para a campanha, usadas na abertura 3D, apresentação e galeria completa.
+- `img/line/`: 21 imagens da coleção LINE, otimizadas em WebP a partir dos arquivos fornecidos.
 
 ## Prévia local
 
