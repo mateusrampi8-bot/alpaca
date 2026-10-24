@@ -43,4 +43,16 @@
     });
   });
   open.addEventListener("click", () => previews[selected].click());
+  collection.querySelectorAll("[data-line-select]").forEach((teaser) => {
+    teaser.addEventListener("click", () => {
+      select(Number(teaser.dataset.lineSelect));
+      const motionOff =
+        matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        document.documentElement.classList.contains("motion-paused");
+      collection.querySelector(".line-showcase").scrollIntoView?.({
+        behavior: motionOff ? "auto" : "smooth",
+        block: "start",
+      });
+    });
+  });
 })();
