@@ -1,10 +1,37 @@
 .line-collection {
   padding-block: 105px;
   background:
-    radial-gradient(ellipse at 85% 0, #233d263f, transparent 45%), #101b14;
-  border-bottom: 1px solid #c3d5b321;
+    radial-gradient(ellipse 75% 27% at 5% 8%, #756a5429, transparent 75%),
+    radial-gradient(ellipse 65% 28% at 100% 48%, #5b686126, transparent 75%),
+    radial-gradient(ellipse 65% 22% at 15% 90%, #78614b18, transparent 75%),
+    #101412;
+  border-bottom: 1px solid #ffffff12;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+}
+.line-collection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.065;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23grain)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+}
+.line-collection::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    #101412 0,
+    transparent 180px,
+    transparent calc(100% - 180px),
+    #101412 100%
+  );
 }
 .line-launch-home .scene-face img {
   object-position: center;
@@ -108,8 +135,8 @@
 }
 .line-teaser {
   padding: 0;
-  background: #142017;
-  border: 1px solid #bdd2ac29;
+  background: #141815;
+  border: 1px solid #d0d5c81c;
   overflow: hidden;
   text-align: left;
   transition:
@@ -193,8 +220,8 @@
   position: relative;
   padding: 0;
   width: 100%;
-  background: #172019;
-  border: 1px solid #c8d8b72b;
+  background: #151916;
+  border: 1px solid #d0d5c824;
   box-shadow: 0 30px 65px #0004;
   overflow: hidden;
 }
