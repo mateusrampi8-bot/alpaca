@@ -7,7 +7,7 @@
   overflow: hidden;
 }
 .line-launch-home .scene-face img {
-  object-position: left center;
+  object-position: center;
 }
 .line-launch-home .scene-front,
 .line-launch-home .scene-back {
@@ -33,6 +33,58 @@
   line-height: 1.1;
   margin-top: 24px;
   color: #c2cdb4;
+}
+.line-origin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7vw;
+  border-top: 1px solid #bfceb02b;
+  padding-block: 55px 40px;
+}
+.line-origin h3 {
+  font-size: clamp(27px, 3vw, 45px);
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+  font-weight: 400;
+  margin-top: 22px;
+}
+.line-origin-copy p {
+  font-size: 12px;
+  line-height: 1.95;
+  color: #b0bda7;
+  max-width: 490px;
+}
+.line-origin-copy p + p {
+  margin-top: 16px;
+}
+.line-design-notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 35px;
+  padding-bottom: 50px;
+}
+.line-design-notes article {
+  border-left: 1px solid #a5bd8b42;
+  padding-left: 20px;
+}
+.line-design-notes article > span {
+  font-size: 8px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #d19b71;
+}
+.line-design-notes h4 {
+  font:
+    400 19px/1.3 Manrope,
+    sans-serif;
+  letter-spacing: -0.025em;
+  margin: 15px 0 12px;
+}
+.line-design-notes p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #a9b9a0;
+  max-width: 330px;
 }
 .line-launch-strip {
   display: flex;
@@ -256,7 +308,7 @@
 }
 @media (max-width: 760px) {
   .line-launch-home .scene-opening h1 {
-    font-size: clamp(64px, 17vw, 100px);
+    font-size: clamp(54px, 15vw, 90px);
   }
   .line-launch-home .scene-opening {
     top: 21%;
@@ -267,6 +319,25 @@
   .line-launch-tagline {
     font-size: 28px;
     margin-top: 20px;
+  }
+  .line-origin {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-block: 35px;
+  }
+  .line-origin h3 {
+    font-size: 30px;
+  }
+  .line-design-notes {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-bottom: 35px;
+  }
+  .line-design-notes article {
+    padding-left: 17px;
+  }
+  .line-design-notes p {
+    max-width: 100%;
   }
   .line-launch-strip {
     font-size: 7px;
