@@ -14,13 +14,11 @@
   let queued = false;
   let lastScroll = window.scrollY;
 
-  const motionOff = () =>
-    document.documentElement.classList.contains("motion-paused");
   function render() {
     queued = false;
     const rect = story.getBoundingClientRect();
     const range = Math.max(1, story.offsetHeight - stage.offsetHeight);
-    const progress = motionOff() ? 0 : clamp(-rect.top / range);
+    const progress = clamp(-rect.top / range);
     const angle = manualAngle === null ? progress * 180 : manualAngle;
     const initialOpacity = clamp(1 - progress * 2.8);
     const endOpacity = clamp((progress - 0.55) / 0.3);
@@ -52,7 +50,7 @@
   controls.forEach((button) =>
     button.addEventListener("click", () => {
       manualAngle = Number(button.dataset.scene) * 180;
-      if (!motionOff()) visual.classList.add("manual-turn");
+      visual.classList.add("manual-turn");
       render();
     }),
   );
@@ -70,13 +68,8 @@
     { passive: true },
   );
   addEventListener("resize", schedule);
-  document.addEventListener("alpaca:motionchange", () => {
-    story.style.setProperty("--pointer-x", "0deg");
-    story.style.setProperty("--pointer-y", "0deg");
-    schedule();
-  });
   visual.addEventListener("pointermove", (event) => {
-    if (motionOff() || event.pointerType === "touch") return;
+    if (event.pointerType === "touch") return;
     const rect = visual.getBoundingClientRect();
     story.style.setProperty(
       "--pointer-x",
@@ -106,8 +99,7 @@
       event.shiftKey ||
       event.altKey ||
       link.target ||
-      link.hasAttribute("download") ||
-      motionOff()
+      link.hasAttribute("download")
     )
       return;
     const next = new URL(link.href, location.href);
@@ -130,10 +122,7 @@
     setTimeout(() => location.assign(next.href), 520);
   });
   try {
-    if (
-      sessionStorage.getItem("alpaca-page-transition") === "1" &&
-      !motionOff()
-    ) {
+    if (sessionStorage.getItem("alpaca-page-transition") === "1") {
       sessionStorage.removeItem("alpaca-page-transition");
       document.documentElement.classList.add("page-arrival");
       setTimeout(

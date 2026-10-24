@@ -866,22 +866,7 @@ svg {
   padding: 12px 0;
   font-size: 11px;
 }
-.motion-control {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  font-size: 9px;
-  padding: 0;
-  color: var(--muted);
-}
-.motion-control:before {
-  content: "Ⅱ";
-  color: var(--green);
-}
-.motion-control[aria-pressed="true"]:before {
-  content: "▷";
-}
+
 .reveal {
   opacity: 1;
 }
@@ -908,20 +893,7 @@ svg {
 .motion-enabled .gallery-item.reveal.visible:hover {
   transform: rotateY(0) rotateZ(0) translateY(-9px);
 }
-.motion-paused *,
-.motion-paused *:before,
-.motion-paused *:after {
-  animation-play-state: paused !important;
-  scroll-behavior: auto !important;
-  transition-duration: 0s !important;
-}
-.motion-paused .reveal {
-  opacity: 1;
-  transform: none;
-}
-.motion-paused .image-stack {
-  transform: none !important;
-}
+
 .art-front {
   animation: frame-front 1.6s var(--ease) both;
 }
@@ -1330,23 +1302,5 @@ svg {
   }
   .product h3 {
     font-size: 11px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  html:not(.motion-forced) {
-    scroll-behavior: auto;
-  }
-  html:not(.motion-forced) *,
-  html:not(.motion-forced) *:before,
-  html:not(.motion-forced) *:after {
-    animation: none !important;
-    transition: none !important;
-  }
-  html:not(.motion-forced).motion-enabled .reveal {
-    opacity: 1;
-    transform: none;
-  }
-  html:not(.motion-forced) .image-stack {
-    transform: none !important;
   }
 }

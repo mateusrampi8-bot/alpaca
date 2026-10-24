@@ -46,10 +46,8 @@
   collection.querySelectorAll("[data-line-select]").forEach((teaser) => {
     teaser.addEventListener("click", () => {
       select(Number(teaser.dataset.lineSelect));
-      const motionOff =
-        document.documentElement.classList.contains("motion-paused");
       collection.querySelector(".line-showcase").scrollIntoView?.({
-        behavior: motionOff ? "auto" : "smooth",
+        behavior: "smooth",
         block: "start",
       });
     });
