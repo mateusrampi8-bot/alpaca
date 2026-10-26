@@ -13,6 +13,8 @@
 .is-leaving .shogun main { transform: perspective(1400px) translateZ(-70px) rotateY(-4deg); opacity: .4; }
 .shogun .nav-cta { color: #efb8be; }
 .sakura-field { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
+.sakura-canvas { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; pointer-events: none; }
+.sakura-field[data-renderer="canvas"] .sakura-petal { display: none; }
 .sakura-petal {
   display: block; position: absolute; top: -32px; left: var(--left); width: var(--size); height: calc(var(--size) * .65);
   border-radius: 85% 10% 75% 25%;
@@ -21,10 +23,10 @@
   animation: sakura-fall var(--duration) var(--delay) linear infinite;
 }
 @keyframes sakura-fall {
-  0% { transform: translate3d(-30px, -4vh, 0) rotateZ(0) rotateY(0); }
-  30% { transform: translate3d(55px, 30vh, 0) rotateZ(120deg) rotateY(160deg); }
-  65% { transform: translate3d(-45px, 72vh, 0) rotateZ(240deg) rotateY(340deg); }
-  100% { transform: translate3d(95px, 112vh, 0) rotateZ(390deg) rotateY(560deg); }
+  0% { transform: translate(-30px, -4vh) rotate(0deg); }
+  30% { transform: translate(55px, 30vh) rotate(120deg); }
+  65% { transform: translate(-45px, 72vh) rotate(240deg); }
+  100% { transform: translate(95px, 112vh) rotate(390deg); }
 }
 .shogun-hero { padding: 44px 0 65px; }
 .shogun-overline, .shogun-hero-foot { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
