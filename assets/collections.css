@@ -88,12 +88,3 @@
   .transition-sun { width: 50vw; top: 23%; }
   .transition-torii { top: 27%; width: 67vw; height: 24vh; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .line-flow i { animation: none; transform: none; opacity: .3; top: 0; }
-  .line-hero-art img { animation: none; }
-  .transition-lines i, .transition-petals i { display: none; }
-  .is-leaving .transition-sun, .page-arrival .transition-sun,
-  .is-leaving .transition-torii, .page-arrival .transition-torii { animation: none; }
-  .is-leaving main { transform: none; filter: none; }
-  .page-arrival .page-curtain { animation-duration: .15s; animation-delay: 0s; }
-}

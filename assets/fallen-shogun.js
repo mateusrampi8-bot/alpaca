@@ -1,7 +1,6 @@
 "use strict";
 
 (() => {
-  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const field = document.querySelector(".sakura-field");
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < 36; i++) {
@@ -27,7 +26,7 @@
   function tilt(surface, target, xName, yName, intensity) {
     let frame = 0;
     surface.addEventListener("pointermove", (event) => {
-      if (event.pointerType === "touch" || reduced.matches) return;
+      if (event.pointerType === "touch") return;
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const box = surface.getBoundingClientRect();

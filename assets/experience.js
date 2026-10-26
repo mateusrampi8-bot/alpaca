@@ -92,7 +92,6 @@
 (() => {
   const root = document.documentElement;
   const label = document.querySelector(".transition-label strong");
-  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const legacy = { "#line": "line.html", "#line-options": "line.html#line-options", "#lookbook": "fotos.html#lookbook" };
   if ((location.pathname.endsWith("/index.html") || location.pathname.endsWith("/")) && legacy[location.hash]) {
     location.replace(new URL(legacy[location.hash], location.href));
@@ -151,7 +150,7 @@
     try {
       sessionStorage.setItem("alpaca-page-transition", JSON.stringify({ theme, at: Date.now(), destination: next.pathname }));
     } catch {}
-    const duration = reduced.matches ? 120 : theme === "line" ? 1100 : theme === "shogun" ? 1200 : 520;
+    const duration = theme === "line" ? 1100 : theme === "shogun" ? 1200 : 520;
     setTimeout(() => location.assign(next.href), duration);
   });
   try {
@@ -162,7 +161,7 @@
       if (arrival.destination === location.pathname && Date.now() - arrival.at < 15000) {
         setTheme(arrival.theme);
         root.classList.add("page-arrival");
-        setTimeout(() => root.classList.remove("page-arrival"), reduced.matches ? 180 : 1100);
+        setTimeout(() => root.classList.remove("page-arrival"), 1100);
       }
     }
   } catch {}

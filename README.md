@@ -5,7 +5,7 @@ Site institucional e vitrine da Alpaca, em HTML, CSS e JavaScript, sem etapa de 
 - `index.html`: apresentação da Alpaca, símbolo da marca, banners com acesso às coleções e prévia da campanha.
 - `line.html`: página própria da LINE, com as 21 combinações, seletor de cores e linhas em movimento contínuo no fundo.
 - `fotos.html`: galeria exclusiva das 15 fotos da campanha, com ampliação e navegação por teclado.
-- `fallen-shogun.html`: nova coleção com banner, 15 visuais ampliáveis, pôster, entrada em 3D, inclinação com o mouse e pétalas de sakura ao fundo. Estilos e efeitos em `assets/fallen-shogun.css` e `assets/fallen-shogun.js`; imagens WebP em `img/fallen-shogun/` e correspondência dos originais em `assets/fallen-shogun-images.json`. A nova página respeita a preferência de movimento reduzido.
+- `fallen-shogun.html`: nova coleção com banner, 15 visuais ampliáveis, pôster, entrada em 3D, inclinação com o mouse e pétalas de sakura ao fundo. Estilos e efeitos em `assets/fallen-shogun.css` e `assets/fallen-shogun.js`; imagens WebP em `img/fallen-shogun/` e correspondência dos originais em `assets/fallen-shogun-images.json`.
 - `sobre.html`: conceito e identidade da marca.
 - `assets/site.css`: identidade visual, layouts responsivos e transições 3D.
 - `assets/site.js`: menu, filtros e galeria.
@@ -29,7 +29,7 @@ Atualize as peças em `line.html` e `fallen-shogun.html`, mantendo os atributos 
 
 As páginas mantêm o Instagram já existente no projeto: `veltrix_conceito`. O WhatsApp provisório foi retirado; inclua o número oficial quando confirmado. Não há checkout nem sincronização de estoque: a vitrine orienta a consultar a disponibilidade com a marca.
 
-Linhas e pétalas usam animação contínua em CSS, sem vídeo, GIF ou bibliotecas externas. As novas animações respeitam a preferência de movimento reduzido do sistema. Preferências antigas de pausa salvas pelo site continuam ignoradas. Mouse e rolagem funcionam também em computadores com tela touch.
+Linhas e pétalas usam animação contínua em CSS, sem vídeo, GIF ou bibliotecas externas. Por solicitação da marca, as animações das coleções e suas entradas permanecem ativas mesmo quando o sistema pede movimento reduzido. Preferências antigas de pausa salvas pelo site continuam ignoradas. Mouse e rolagem funcionam também em computadores com tela touch.
 
 A abertura do conceito usa uma cena fixa durante um trecho da rolagem, sem capturar a roda do mouse nem bloquear a navegação. As fotografias ocupam duas faces de um painel CSS 3D. Os controles 01/02 alternam as faces; a rolagem retoma a progressão da cena.
 
