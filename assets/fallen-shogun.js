@@ -47,10 +47,10 @@
           ctx.scale(petal.radius * flutter, petal.radius);
           ctx.globalAlpha = petal.opacity;
           const shading = ctx.createLinearGradient(-0.8, -1, 0.8, 1);
-          shading.addColorStop(0, "#fff1f5");
-          shading.addColorStop(0.35, "#f5bccd");
-          shading.addColorStop(0.7, "#e68ba9");
-          shading.addColorStop(1, "#bb567d");
+          shading.addColorStop(0, "#f0d3bd");
+          shading.addColorStop(0.35, "#e98267");
+          shading.addColorStop(0.7, "#c72b23");
+          shading.addColorStop(1, "#79110f");
           ctx.fillStyle = shading;
           // Rounded shoulders, a sakura notch, and a tapered base.
           ctx.beginPath();
@@ -64,19 +64,19 @@
           ctx.closePath();
           ctx.fill();
           ctx.lineWidth = 0.045;
-          ctx.strokeStyle = "rgba(162, 63, 103, 0.55)";
+          ctx.strokeStyle = "rgba(103, 20, 16, 0.55)";
           ctx.stroke();
           // Fine central vein and a small highlight add definition at small sizes.
           ctx.beginPath();
           ctx.moveTo(0, 0.82);
           ctx.bezierCurveTo(-0.1, 0.3, 0.2, -0.15, 0.03, -0.6);
           ctx.lineWidth = 0.035;
-          ctx.strokeStyle = "rgba(164, 66, 106, 0.4)";
+          ctx.strokeStyle = "rgba(112, 24, 19, 0.4)";
           ctx.stroke();
           ctx.beginPath();
           ctx.moveTo(-0.33, -0.75);
           ctx.bezierCurveTo(-0.68, -0.5, -0.64, -0.12, -0.4, 0.16);
-          ctx.strokeStyle = "rgba(255, 245, 249, 0.7)";
+          ctx.strokeStyle = "rgba(255, 235, 215, 0.7)";
           ctx.stroke();
           ctx.restore();
         }

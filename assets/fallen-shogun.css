@@ -1,24 +1,37 @@
 .shogun {
-  --paper: #100e0f;
-  --ink: #f0e9df;
-  --muted: #b4a7a5;
-  --orange: #dd383d;
-  background: radial-gradient(ellipse at 90% 40%, #461b242e, transparent 55%), var(--paper);
+  --banner-black: #080707;
+  --banner-red: #c6000c;
+  --banner-highlight: #ed3529;
+  --banner-ivory: #e6d8ca;
+  --banner-smoke: #baaa9e;
+  --paper: var(--banner-black);
+  --ink: var(--banner-ivory);
+  --muted: var(--banner-smoke);
+  --orange: var(--banner-highlight);
+  --green: var(--banner-ivory);
+  --line: #b3987c38;
+  background: radial-gradient(ellipse at 100% 20%, #85000b22, transparent 55%), radial-gradient(ellipse at 0 65%, #4d08081a, transparent 45%), var(--paper);
   isolation: isolate;
 }
-.shogun .site-header { position: relative; }
+.shogun .site-header { position: relative; color: var(--banner-ivory); border-color: var(--line); }
 .shogun .nav-links { gap: clamp(15px, 2.3vw, 36px); }
 .shogun main, .shogun .site-footer { position: relative; z-index: 1; }
 .shogun main { transform-origin: center 20vh; transition: transform .52s var(--ease), opacity .52s; }
 .is-leaving .shogun main { transform: perspective(1400px) translateZ(-70px) rotateY(-4deg); opacity: .4; }
-.shogun .nav-cta { color: #efb8be; }
+.shogun .nav-cta { color: var(--banner-ivory); border-color: var(--banner-red); }
+.shogun .collections-menu.has-current summary { color: var(--banner-highlight); }
+.shogun .collections-dropdown { background: #100b09; border-color: #9c65553d; }
+.shogun .collections-dropdown a:hover, .shogun .collections-dropdown a[aria-current="page"] { background: #66000833; border-color: #b02a224d; }
+.shogun .collections-dropdown strong { color: var(--banner-ivory); }
+.shogun .collections-dropdown a:last-child strong { color: #ed7566; }
+.shogun .collections-dropdown small { color: var(--banner-smoke); }
 .sakura-field { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
 .sakura-canvas { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; pointer-events: none; }
 .sakura-field[data-renderer="canvas"] .sakura-petal { display: none; }
 .sakura-petal {
   display: block; position: absolute; top: -32px; left: var(--left); width: var(--size); height: calc(var(--size) * .65);
   border-radius: 70% 40% 75% 25%;
-  background: linear-gradient(135deg, #fff1f5, #f5bccd 35%, #e68ba9 70%, #bb567d);
+  background: linear-gradient(135deg, #f0d3bd, #e98267 35%, #c72b23 70%, #79110f);
   opacity: var(--opacity);
   animation: sakura-fall var(--duration) var(--delay) linear infinite;
 }
@@ -34,7 +47,7 @@
 .shogun-overline > span, .shogun-hero-foot > span { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: .2em; }
 .shogun-banner-frame { perspective: 1400px; }
 .shogun-banner {
-  position: relative; transform-style: preserve-3d; border: 1px solid #e7b5b626;
+  position: relative; transform-style: preserve-3d; border: 1px solid #b3987c38;
   transform: rotateX(var(--banner-x, 0deg)) rotateY(var(--banner-y, 0deg));
   box-shadow: 0 25px 80px #0008; transition: transform .45s var(--ease);
   animation: shogun-arrival 1.2s var(--ease) backwards;
@@ -46,10 +59,10 @@
 }
 .shogun-intro { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: end; padding: 40px 0 30px; }
 .shogun h1 { font-size: clamp(40px, 5.5vw, 84px); line-height: .98; font-weight: 500; letter-spacing: -.065em; text-transform: uppercase; }
-.shogun h1 span { color: #df424b; }
+.shogun h1 span { color: var(--banner-highlight); }
 .shogun-intro-copy { max-width: 410px; justify-self: end; }
 .shogun-intro-copy p { font-size: 13px; line-height: 1.9; color: var(--muted); margin-bottom: 20px; }
-.shogun-intro-copy a { display: inline-flex; gap: 36px; align-items: center; padding-bottom: 9px; border-bottom: 1px solid #bd4e57; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
+.shogun-intro-copy a { display: inline-flex; gap: 36px; align-items: center; padding-bottom: 9px; border-bottom: 1px solid var(--banner-red); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
 .shogun-hero-foot { border-top: 1px solid var(--line); padding-top: 18px; }
 .shogun-collection { padding: 60px 0 100px; }
 .shogun-heading { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 35px; }
@@ -58,10 +71,10 @@
 .shogun-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 24px; perspective: 1200px; }
 .shogun-card { min-width: 0; perspective: 1000px; }
 .shogun-card button { display: block; width: 100%; padding: 0; text-align: left; background: transparent; }
-.shogun-card-art { display: block; position: relative; border: 1px solid #ffffff18; background: #242223; transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); transition: transform .45s var(--ease), box-shadow .45s; transform-style: preserve-3d; }
+.shogun-card-art { display: block; position: relative; border: 1px solid #b3987c30; background: #211a17; transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); transition: transform .45s var(--ease), box-shadow .45s; transform-style: preserve-3d; }
 .shogun-card img { aspect-ratio: 1312 / 1199; object-fit: contain; }
-.shogun-card button:hover .shogun-card-art, .shogun-card button:focus-visible .shogun-card-art { box-shadow: 0 16px 45px #0008, 0 0 0 1px #cb596057; }
-.shogun-card-zoom { position: absolute; bottom: 12px; right: 12px; width: 32px; height: 32px; display: grid; place-items: center; background: #110e10d9; border: 1px solid #ffffff35; border-radius: 50%; font-size: 19px; transform: translateZ(20px); }
+.shogun-card button:hover .shogun-card-art, .shogun-card button:focus-visible .shogun-card-art { box-shadow: 0 16px 45px #0008, 0 0 0 1px #c6000c88; }
+.shogun-card-zoom { position: absolute; bottom: 12px; right: 12px; width: 32px; height: 32px; display: grid; place-items: center; background: #080707e6; border: 1px solid #b3987c66; border-radius: 50%; font-size: 19px; transform: translateZ(20px); }
 .shogun-card-copy { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 16px; }
 .shogun-card-copy strong { font-size: 13px; font-weight: 500; }
 .shogun-card-copy small { font-size: 9px; letter-spacing: .12em; color: var(--muted); }
@@ -77,12 +90,12 @@
   text-align: center;
   color: #39291c;
   background:
-    radial-gradient(ellipse at 0 10%, #83502c42, transparent 35%),
-    radial-gradient(ellipse at 100% 85%, #6c402b47, transparent 35%),
-    radial-gradient(ellipse at 65% 30%, #fff0ce80, transparent 55%),
+    radial-gradient(ellipse at 0 10%, #77503c42, transparent 35%),
+    radial-gradient(ellipse at 100% 85%, #5d382e47, transparent 35%),
+    radial-gradient(ellipse at 65% 30%, #f6e6d780, transparent 55%),
     repeating-linear-gradient(17deg, #76502a08 0 1px, transparent 1px 5px),
     repeating-linear-gradient(97deg, #fff5db14 0 1px, transparent 1px 7px),
-    #ddc596;
+    #d7c3ac;
   box-shadow: inset 0 0 45px #80512d45, inset 0 0 8px #6c402b80;
   clip-path: polygon(1% .6%, 8% 0, 17% .4%, 28% .1%, 39% .5%, 52% 0, 64% .4%, 77% .1%, 88% .5%, 99% .2%, 99.5% 12%, 99.1% 26%, 100% 39%, 99.4% 53%, 99.8% 69%, 99.2% 84%, 99.8% 99.4%, 87% 100%, 74% 99.6%, 62% 99.9%, 49% 99.5%, 36% 100%, 23% 99.6%, 12% 100%, .6% 99.4%, 1% 85%, .2% 72%, .7% 58%, 0 43%, .6% 28%, .2% 14%);
 }
@@ -92,7 +105,7 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(180deg, #63432d55, #fae4b94d 12px, transparent 36px, transparent calc(100% - 36px), #fae4b94d calc(100% - 12px), #63432d55);
+  background: linear-gradient(180deg, #63432d55, #f1ddc84d 12px, transparent 36px, transparent calc(100% - 36px), #f1ddc84d calc(100% - 12px), #63432d55);
 }
 .shogun-world-copy::after {
   content: "";
@@ -101,24 +114,35 @@
   border: 3px double #80552e3d;
   pointer-events: none;
 }
-.shogun-world-copy .eyebrow { justify-content: center; color: #75442b; }
-.shogun-world-copy .eyebrow::before { background: #9c3d34; }
+.shogun-world-copy .eyebrow { justify-content: center; color: #742620; }
+.shogun-world-copy .eyebrow::before { background: #a51c19; }
 .shogun-world-copy h2 { font-family: Georgia, "Times New Roman", serif; color: #42291d; font-size: clamp(34px, 4vw, 58px); line-height: 1.12; margin: 28px auto 34px; }
 .shogun-world-copy p { max-width: 620px; margin: 24px auto; font-family: Georgia, "Times New Roman", serif; line-height: 1.85; font-size: clamp(16px, 1.3vw, 18px); color: #493422; }
-.shogun-world-copy strong { color: #552c23; }
+.shogun-world-copy strong { color: #741d19; }
 .shogun-world-copy p:last-of-type { color: #764632; }
 .shogun-world-copy .text-link { margin-top: 20px; display: inline-flex; color: #633d28; }
-.shogun .contact { background: #231418a8; border-top: 1px solid #ffffff15; }
-.shogun .button { background: #5b2028; border-color: #95434d; }
-.shogun .button:hover { background: #752a35; }
-.shogun .dialog { background: #181315; }
-.shogun .dialog-image { object-fit: contain; background: #242223; }
+.shogun .contact { background: linear-gradient(125deg, #260808, #100908 70%); color: var(--banner-ivory); border-top: 1px solid var(--line); }
+.shogun .contact p { color: var(--banner-smoke); }
+.shogun .contact::after { color: #e6d8ca08; }
+.shogun .button, .shogun .contact .button { background: #9b0009; color: #f4e8dc; border-color: #d83225; }
+.shogun .button:hover, .shogun .contact .button:hover { background: #c6000c; border-color: #ed5544; }
+.shogun .site-footer { background: #080606; color: var(--banner-ivory); }
+.shogun .dialog { background: #120d0b; }
+.shogun .dialog::backdrop { background: #080505e6; }
+.shogun .dialog-image { object-fit: contain; background: #211a17; }
+.shogun .dialog-close { background: #65100f; color: var(--banner-ivory); }
+.shogun .dialog-nav button { color: var(--banner-ivory); }
+.shogun .page-curtain { background: var(--banner-black); color: var(--banner-ivory); }
+[data-transition="shogun"] .shogun .page-curtain { background: var(--banner-black); color: var(--banner-ivory); }
+.shogun .page-curtain .transition-japan { background: radial-gradient(ellipse at 50% 60%, #79000c38, transparent 65%); }
+.shogun .page-curtain .transition-sun { background: var(--banner-red); box-shadow: 0 0 120px #c6000c33; }
+.shogun .transition-petals i { background: #e98267; }
 @media (min-width: 761px) and (max-width: 1100px) {
   .shogun .nav-cta { display: none; }
   .shogun .nav-links { gap: 20px; }
 }
 @media (max-width: 760px) {
-  .shogun .nav-links { background: #1e1418; }
+  .shogun .nav-links { background: #100b09; }
   .shogun-hero { padding: 28px 0 35px; }
   .shogun-overline > span { display: none; }
   .shogun-intro { grid-template-columns: 1fr; gap: 22px; padding: 30px 0; }
