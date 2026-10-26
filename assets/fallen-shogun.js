@@ -1,16 +1,6 @@
 "use strict";
 
 (() => {
-  const field = document.querySelector(".sakura-field");
-  const fragment = document.createDocumentFragment();
-  for (let i = 0; i < 36; i++) {
-    const petal = document.createElement("i");
-    petal.className = "sakura-petal";
-    petal.style.cssText = `--left:${(i * 37.7) % 100}%;--size:${7 + (i % 5) * 3}px;--opacity:${0.22 + (i % 4) * 0.1};--duration:${16 + (i % 7) * 3}s;--delay:-${i * 2.7}s`;
-    fragment.append(petal);
-  }
-  field.append(fragment);
-
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {

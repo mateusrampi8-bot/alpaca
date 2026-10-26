@@ -29,7 +29,7 @@ Atualize as peças em `line.html` e `fallen-shogun.html`, mantendo os atributos 
 
 As páginas mantêm o Instagram já existente no projeto: `veltrix_conceito`. O WhatsApp provisório foi retirado; inclua o número oficial quando confirmado. Não há checkout nem sincronização de estoque: a vitrine orienta a consultar a disponibilidade com a marca.
 
-Linhas e pétalas usam animação contínua em CSS, sem vídeo, GIF ou bibliotecas externas. Por solicitação da marca, as animações das coleções e suas entradas permanecem ativas mesmo quando o sistema pede movimento reduzido. Preferências antigas de pausa salvas pelo site continuam ignoradas. Mouse e rolagem funcionam também em computadores com tela touch.
+Linhas e pétalas usam animação contínua em CSS, sem vídeo, GIF ou bibliotecas externas. As 42 pétalas de Fallen Shogun já estão no HTML e aparecem desde o carregamento, em uma camada fixa não interativa que acompanha toda a navegação pela coleção, sem depender do JavaScript. Por solicitação da marca, as animações das coleções e suas entradas permanecem ativas mesmo quando o sistema pede movimento reduzido. Preferências antigas de pausa salvas pelo site continuam ignoradas. Mouse e rolagem funcionam também em computadores com tela touch.
 
 A abertura do conceito usa uma cena fixa durante um trecho da rolagem, sem capturar a roda do mouse nem bloquear a navegação. As fotografias ocupam duas faces de um painel CSS 3D. Os controles 01/02 alternam as faces; a rolagem retoma a progressão da cena.
 

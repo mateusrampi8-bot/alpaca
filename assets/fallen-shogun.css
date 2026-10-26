@@ -12,19 +12,19 @@
 .shogun main { transform-origin: center 20vh; transition: transform .52s var(--ease), opacity .52s; }
 .is-leaving .shogun main { transform: perspective(1400px) translateZ(-70px) rotateY(-4deg); opacity: .4; }
 .shogun .nav-cta { color: #efb8be; }
-.sakura-field { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; perspective: 700px; }
+.sakura-field { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
 .sakura-petal {
-  position: absolute; top: -10vh; left: var(--left); width: var(--size); height: calc(var(--size) * .65);
+  display: block; position: absolute; top: -32px; left: var(--left); width: var(--size); height: calc(var(--size) * .65);
   border-radius: 85% 10% 75% 25%;
   background: linear-gradient(135deg, #fce0e5, #d67e99 65%, #92374f);
-  opacity: var(--opacity); transform-style: preserve-3d;
+  opacity: var(--opacity); box-shadow: 0 0 5px #e9a0b326;
   animation: sakura-fall var(--duration) var(--delay) linear infinite;
 }
 @keyframes sakura-fall {
-  0% { transform: translate3d(-30px, -8vh, 0) rotateZ(0) rotateY(0); }
-  30% { transform: translate3d(55px, 30vh, 40px) rotateZ(120deg) rotateY(160deg); }
-  65% { transform: translate3d(-45px, 72vh, -25px) rotateZ(240deg) rotateY(340deg); }
-  100% { transform: translate3d(95px, 120vh, 30px) rotateZ(390deg) rotateY(560deg); }
+  0% { transform: translate3d(-30px, -4vh, 0) rotateZ(0) rotateY(0); }
+  30% { transform: translate3d(55px, 30vh, 0) rotateZ(120deg) rotateY(160deg); }
+  65% { transform: translate3d(-45px, 72vh, 0) rotateZ(240deg) rotateY(340deg); }
+  100% { transform: translate3d(95px, 112vh, 0) rotateZ(390deg) rotateY(560deg); }
 }
 .shogun-hero { padding: 44px 0 65px; }
 .shogun-overline, .shogun-hero-foot { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
