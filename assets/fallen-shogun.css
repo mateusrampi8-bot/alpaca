@@ -10,8 +10,21 @@
   --orange: var(--banner-highlight);
   --green: var(--banner-ivory);
   --line: #b3987c38;
-  background: radial-gradient(ellipse at 100% 20%, #85000b22, transparent 55%), radial-gradient(ellipse at 0 65%, #4d08081a, transparent 45%), var(--paper);
+  background: #210a0b;
   isolation: isolate;
+}
+.shogun::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 0 25%, #a90b0b99, transparent 58%),
+    radial-gradient(ellipse at 100% 80%, #8c090bb3, transparent 60%),
+    radial-gradient(ellipse at 85% 0, #d5b49a33, transparent 48%),
+    radial-gradient(ellipse at 35% 65%, #c7aa9021, transparent 45%),
+    linear-gradient(125deg, #380c0e, #160b0b 46%, #3f0d0e);
 }
 .shogun .site-header { position: relative; color: var(--banner-ivory); border-color: var(--line); }
 .shogun .nav-links { gap: clamp(15px, 2.3vw, 36px); }
@@ -121,12 +134,12 @@
 .shogun-world-copy strong { color: #741d19; }
 .shogun-world-copy p:last-of-type { color: #764632; }
 .shogun-world-copy .text-link { margin-top: 20px; display: inline-flex; color: #633d28; }
-.shogun .contact { background: linear-gradient(125deg, #260808, #100908 70%); color: var(--banner-ivory); border-top: 1px solid var(--line); }
+.shogun .contact { background: linear-gradient(125deg, #4a0d0deb, #210b0be6 70%); color: var(--banner-ivory); border-top: 1px solid var(--line); }
 .shogun .contact p { color: var(--banner-smoke); }
 .shogun .contact::after { color: #e6d8ca08; }
 .shogun .button, .shogun .contact .button { background: #9b0009; color: #f4e8dc; border-color: #d83225; }
 .shogun .button:hover, .shogun .contact .button:hover { background: #c6000c; border-color: #ed5544; }
-.shogun .site-footer { background: #080606; color: var(--banner-ivory); }
+.shogun .site-footer { background: #210909; color: var(--banner-ivory); }
 .shogun .dialog { background: #120d0b; }
 .shogun .dialog::backdrop { background: #080505e6; }
 .shogun .dialog-image { object-fit: contain; background: #211a17; }
