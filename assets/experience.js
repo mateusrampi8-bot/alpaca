@@ -86,6 +86,11 @@
   });
   render();
 
+  addEventListener("pageshow", schedule);
+})();
+
+(() => {
+
   // Same-origin page navigation uses a short curtain; hashes and external links stay native.
   let navigating = false;
   document.addEventListener("click", (event) => {
@@ -134,6 +139,5 @@
   addEventListener("pageshow", () => {
     navigating = false;
     document.documentElement.classList.remove("is-leaving");
-    schedule();
   });
 })();

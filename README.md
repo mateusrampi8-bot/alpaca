@@ -3,6 +3,7 @@
 Site institucional e vitrine da Alpaca, em HTML, CSS e JavaScript, sem etapa de build.
 
 - `index.html`: seleção, manifesto e campanha.
+- `fallen-shogun.html`: nova coleção com banner, 15 visuais ampliáveis, pôster, entrada em 3D, inclinação com o mouse e pétalas de sakura ao fundo. Estilos e efeitos em `assets/fallen-shogun.css` e `assets/fallen-shogun.js`; imagens WebP em `img/fallen-shogun/` e correspondência dos originais em `assets/fallen-shogun-images.json`. A nova página respeita a preferência de movimento reduzido.
 - `sobre.html`: conceito e identidade da marca.
 - `assets/site.css`: identidade visual, layouts responsivos e transições 3D.
 - `assets/site.js`: menu, filtros, galeria e preferências de movimento.

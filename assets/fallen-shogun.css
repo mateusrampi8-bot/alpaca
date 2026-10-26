@@ -1,0 +1,104 @@
+.shogun {
+  --paper: #100e0f;
+  --ink: #f0e9df;
+  --muted: #b4a7a5;
+  --orange: #dd383d;
+  background: radial-gradient(ellipse at 90% 40%, #461b242e, transparent 55%), var(--paper);
+  isolation: isolate;
+}
+.shogun .site-header { position: relative; }
+.shogun .nav-links { gap: clamp(15px, 2.3vw, 36px); }
+.shogun main, .shogun .site-footer { position: relative; z-index: 1; }
+.shogun main { transform-origin: center 20vh; transition: transform .52s var(--ease), opacity .52s; }
+.is-leaving .shogun main { transform: perspective(1400px) translateZ(-70px) rotateY(-4deg); opacity: .4; }
+.shogun .nav-cta { color: #efb8be; }
+.sakura-field { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; perspective: 700px; }
+.sakura-petal {
+  position: absolute; top: -10vh; left: var(--left); width: var(--size); height: calc(var(--size) * .65);
+  border-radius: 85% 10% 75% 25%;
+  background: linear-gradient(135deg, #fce0e5, #d67e99 65%, #92374f);
+  opacity: var(--opacity); transform-style: preserve-3d;
+  animation: sakura-fall var(--duration) var(--delay) linear infinite;
+}
+@keyframes sakura-fall {
+  0% { transform: translate3d(-30px, -8vh, 0) rotateZ(0) rotateY(0); }
+  30% { transform: translate3d(55px, 30vh, 40px) rotateZ(120deg) rotateY(160deg); }
+  65% { transform: translate3d(-45px, 72vh, -25px) rotateZ(240deg) rotateY(340deg); }
+  100% { transform: translate3d(95px, 120vh, 30px) rotateZ(390deg) rotateY(560deg); }
+}
+.shogun-hero { padding: 44px 0 65px; }
+.shogun-overline, .shogun-hero-foot { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.shogun-overline { margin-bottom: 24px; }
+.shogun-overline > span, .shogun-hero-foot > span { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: .2em; }
+.shogun-banner-frame { perspective: 1400px; }
+.shogun-banner {
+  position: relative; transform-style: preserve-3d; border: 1px solid #e7b5b626;
+  transform: rotateX(var(--banner-x, 0deg)) rotateY(var(--banner-y, 0deg));
+  box-shadow: 0 25px 80px #0008; transition: transform .45s var(--ease);
+  animation: shogun-arrival 1.2s var(--ease) backwards;
+}
+.shogun-banner img { aspect-ratio: 1983 / 793; object-fit: contain; }
+@keyframes shogun-arrival {
+  from { opacity: 0; transform: translate3d(0, 65px, -180px) rotateX(14deg); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) rotateX(0); }
+}
+.shogun-intro { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: end; padding: 40px 0 30px; }
+.shogun h1 { font-size: clamp(40px, 5.5vw, 84px); line-height: .98; font-weight: 500; letter-spacing: -.065em; text-transform: uppercase; }
+.shogun h1 span { color: #df424b; }
+.shogun-intro-copy { max-width: 410px; justify-self: end; }
+.shogun-intro-copy p { font-size: 13px; line-height: 1.9; color: var(--muted); margin-bottom: 20px; }
+.shogun-intro-copy a { display: inline-flex; gap: 36px; align-items: center; padding-bottom: 9px; border-bottom: 1px solid #bd4e57; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
+.shogun-hero-foot { border-top: 1px solid var(--line); padding-top: 18px; }
+.shogun-collection { padding: 60px 0 100px; }
+.shogun-heading { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 35px; }
+.shogun-heading h2, .shogun-world h2 { font-size: clamp(35px, 4vw, 58px); letter-spacing: -.05em; font-weight: 400; margin-top: 14px; }
+.shogun-heading > p { color: var(--muted); font-size: 12px; max-width: 270px; line-height: 1.8; }
+.shogun-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 24px; perspective: 1200px; }
+.shogun-card { min-width: 0; perspective: 1000px; }
+.shogun-card button { display: block; width: 100%; padding: 0; text-align: left; background: transparent; }
+.shogun-card-art { display: block; position: relative; border: 1px solid #ffffff18; background: #242223; transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); transition: transform .45s var(--ease), box-shadow .45s; transform-style: preserve-3d; }
+.shogun-card img { aspect-ratio: 1312 / 1199; object-fit: contain; }
+.shogun-card button:hover .shogun-card-art, .shogun-card button:focus-visible .shogun-card-art { box-shadow: 0 16px 45px #0008, 0 0 0 1px #cb596057; }
+.shogun-card-zoom { position: absolute; bottom: 12px; right: 12px; width: 32px; height: 32px; display: grid; place-items: center; background: #110e10d9; border: 1px solid #ffffff35; border-radius: 50%; font-size: 19px; transform: translateZ(20px); }
+.shogun-card-copy { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 16px; }
+.shogun-card-copy strong { font-size: 13px; font-weight: 500; }
+.shogun-card-copy small { font-size: 9px; letter-spacing: .12em; color: var(--muted); }
+.shogun-motion .shogun-reveal { opacity: 0; transform: translate3d(0, 45px, -60px) rotateX(9deg); transition: opacity .8s var(--ease), transform 1s var(--ease); }
+.shogun-motion .shogun-reveal.is-visible { opacity: 1; transform: none; }
+.shogun-world { display: grid; grid-template-columns: .8fr 1fr; gap: 10%; align-items: center; padding: 60px 0 120px; border-top: 1px solid var(--line); }
+.shogun-poster { padding: 0; background: transparent; width: min(100%, 440px); justify-self: center; perspective: 1000px; }
+.shogun-poster img { border: 1px solid #ffffff20; transform: rotateY(8deg) rotateZ(-2deg); box-shadow: -20px 20px 70px #0009; transition: transform .7s var(--ease); }
+.shogun-poster:hover img, .shogun-poster:focus-visible img { transform: rotateY(0) rotateZ(0); }
+.shogun-world-copy p { max-width: 420px; margin: 25px 0; line-height: 1.9; font-size: 13px; color: var(--muted); }
+.shogun-world-copy .text-link { margin-top: 20px; display: inline-flex; }
+.shogun .contact { background: #231418a8; border-top: 1px solid #ffffff15; }
+.shogun .button { background: #5b2028; border-color: #95434d; }
+.shogun .button:hover { background: #752a35; }
+.shogun .dialog { background: #181315; }
+.shogun .dialog-image { object-fit: contain; background: #242223; }
+@media (min-width: 761px) and (max-width: 1100px) {
+  .shogun .nav-cta { display: none; }
+  .shogun .nav-links { gap: 20px; }
+}
+@media (max-width: 760px) {
+  .shogun .nav-links { background: #1e1418; }
+  .shogun-hero { padding: 28px 0 35px; }
+  .shogun-overline > span { display: none; }
+  .shogun-intro { grid-template-columns: 1fr; gap: 22px; padding: 30px 0; }
+  .shogun-intro-copy { justify-self: start; }
+  .shogun-hero-foot > span { font-size: 8px; letter-spacing: .08em; }
+  .shogun-collection { padding: 40px 0 65px; }
+  .shogun-heading { display: block; }
+  .shogun-heading > p { margin-top: 18px; }
+  .shogun-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 12px; }
+  .shogun-card-copy { display: block; padding-top: 12px; }
+  .shogun-card-copy strong { display: block; font-size: 12px; margin-bottom: 6px; }
+  .shogun-world { grid-template-columns: 1fr; gap: 45px; padding: 50px 0 70px; }
+  .shogun-poster { max-width: 320px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shogun { scroll-behavior: auto; }
+  .shogun .sakura-petal { animation: none; display: none; }
+  .shogun .shogun-banner, .shogun .shogun-card-art, .shogun .shogun-poster img,
+  .shogun main, .shogun-motion .shogun-reveal { animation: none; transition: none; transform: none; opacity: 1; }
+}
