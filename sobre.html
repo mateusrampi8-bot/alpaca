@@ -36,36 +36,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="assets/site.css?v=always-on" />
     <link rel="stylesheet" href="assets/experience.css?v=always-on" />
-    <script src="assets/site.js?v=always-on" defer></script>
-    <script src="assets/experience.js?v=fallen-shogun" defer></script>
+    <script src="assets/site.js?v=collections-2" defer></script>
+    <script src="assets/experience.js?v=collections-2" defer></script>
+    <link rel="stylesheet" href="assets/collections.css?v=collections-2" />
   </head>
   <body class="cinematic">
     <a class="skip" href="#conteudo">Pular para o conteúdo</a>
     <header class="site-header" id="top">
       <nav class="nav wrap" aria-label="Navegação principal">
-        <a class="logo" href="index.html" aria-label="Alpaca, início"
-          >ALPACA<span>°</span></a
-        >
+        <a class="logo" href="index.html" aria-label="Alpaca, início">ALPACA<span>°</span></a>
         <div class="nav-links" id="nav-links">
-          <a href="index.html#line">LINE</a>
-          <a href="fallen-shogun.html">Fallen Shogun</a>
-          <a href="index.html#drops">A seleção</a
-          ><a href="sobre.html" aria-current="page">O conceito</a
-          ><a href="index.html#lookbook">Lookbook</a
-          ><a href="#contato">Contato</a>
+          <a href="index.html">Início</a>
+          <details class="collections-menu">
+            <summary>Coleções</summary>
+            <div class="collections-dropdown">
+              <a href="line.html" data-transition="line"><strong>LINE</strong><small>O primeiro capítulo / 21 combinações</small></a>
+              <a href="fallen-shogun.html" data-transition="shogun"><strong>FALLEN SHOGUN</strong><small>Arte, tradição e presença</small></a>
+            </div>
+          </details>
+          <a href="fotos.html">Nossas fotos</a>
+          <a href="sobre.html" aria-current="page">O conceito</a>
+          <a href="#contato">Contato</a>
         </div>
-        <a class="nav-cta" href="index.html#drops"
-          >Explore a Alpaca
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 12h15M13 5l7 7-7 7" /></svg></a
-        ><button
-          class="menu-toggle"
-          aria-label="Abrir menu"
-          aria-expanded="false"
-          aria-controls="nav-links"
-        >
-          <span></span><span></span>
-        </button>
+        <a class="nav-cta" href="index.html#colecoes">Explore as coleções <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7" /></svg></a>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
       </nav>
     </header>
     <main id="conteudo">
@@ -262,267 +256,7 @@
           </div>
         </div>
       </section>
-      <section class="section lookbook" id="lookbook">
-        <div class="wrap">
-          <div class="section-heading reveal">
-            <div>
-              <div class="eyebrow">Campanha 001 / Lookbook</div>
-              <h2>Essencial é<br />o que permanece.</h2>
-            </div>
-            <p>
-              Luz, forma e atitude.<br />O universo Alpaca em 15 perspectivas.
-            </p>
-          </div>
-          <div class="campaign-grid">
-            <button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-01.jpg"
-              data-title="Alpaca / Perspectiva 01"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 1 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-01.jpg"
-                alt="Modelo com camisa preta em pé na campanha Alpaca"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              /><span class="campaign-index">01 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-02.jpg"
-              data-title="Alpaca / Perspectiva 02"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 2 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-02.jpg"
-                alt="Modelo agachado com camiseta preta Alpaca"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              /><span class="campaign-index">02 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-03.jpg"
-              data-title="Alpaca / Perspectiva 03"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 3 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-03.jpg"
-                alt="Modelo com camiseta branca e livro"
-                width="832"
-                height="1248"
-                loading="lazy"
-              /><span class="campaign-index">03 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-04.jpg"
-              data-title="Alpaca / Perspectiva 04"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 4 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-04.jpg"
-                alt="Modelo com camiseta branca sentado em poltrona escura"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              /><span class="campaign-index">04 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-05.jpg"
-              data-title="Alpaca / Perspectiva 05"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 5 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-05.jpg"
-                alt="Modelo com camiseta branca e casaco sobre o ombro"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              /><span class="campaign-index">05 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-06-cartas.png"
-              data-title="Alpaca / Perspectiva 06"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 6 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-06-cartas.png"
-                alt="Modelo com camisa preta e casaco, fazendo uma cascata de cartas"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              /><span class="campaign-index">06 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-07.jpg"
-              data-title="Alpaca / Perspectiva 07"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 7 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-07.jpg"
-                alt="Modelo de perfil com camiseta branca e livro"
-                width="1066"
-                height="1600"
-                loading="lazy"
-              /><span class="campaign-index">07 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-08.jpg"
-              data-title="Alpaca / Perspectiva 08"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 8 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-08.jpg"
-                alt="Modelo com camiseta verde e casaco bege"
-                width="1066"
-                height="1600"
-                loading="lazy"
-              /><span class="campaign-index">08 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-09.jpg"
-              data-title="Alpaca / Perspectiva 09"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 9 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-09.jpg"
-                alt="Modelo com camiseta preta fotografado de baixo para cima"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              /><span class="campaign-index">09 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-10.jpg"
-              data-title="Alpaca / Perspectiva 10"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 10 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-10.jpg"
-                alt="Dois modelos em pé com camisetas pretas"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              /><span class="campaign-index">10 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-11.jpg"
-              data-title="Alpaca / Perspectiva 11"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 11 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-11.jpg"
-                alt="Modelo com camiseta branca em poltrona de couro"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              /><span class="campaign-index">11 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-12.jpg"
-              data-title="Alpaca / Perspectiva 12"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 12 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-12.jpg"
-                alt="Modelo com camiseta branca apoiado em um banco"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              /><span class="campaign-index">12 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-13.jpg"
-              data-title="Alpaca / Perspectiva 13"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 13 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-13.jpg"
-                alt="Modelo com camiseta branca sentado em poltrona de couro"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              /><span class="campaign-index">13 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span></button
-            ><button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-14.jpg"
-              data-title="Alpaca / Perspectiva 14"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 14 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-14.jpg"
-                alt="Modelo com camiseta branca estendendo a mão para a câmera"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              /><span class="campaign-index">14 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span>
-            </button>
-            <button
-              class="campaign-photo reveal"
-              data-preview="img/campanha/alpaca-15-chapeu.png"
-              data-title="Alpaca / Perspectiva 15"
-              data-description="Essencial é o que permanece. Explore as 15 fotografias da campanha Alpaca com as setas."
-              data-group="campaign"
-              aria-label="Ampliar foto 15 de 15"
-            >
-              <img
-                src="img/campanha/alpaca-15-chapeu.png"
-                alt="Modelo de braços cruzados com chapéu preto, camisa branca e casaco escuro"
-                width="1024"
-                height="1536"
-                loading="lazy"
-              /><span class="campaign-index">15 / 15</span
-              ><span class="campaign-expand" aria-hidden="true">↗</span>
-            </button>
-          </div>
-          <div class="gallery-caption">
-            <span>Alpaca · Estudo de essenciais</span
-            ><span>Toque nas imagens para explorar ↗</span>
-          </div>
-        </div>
-      </section>
+      <section class="section wrap"><div class="eyebrow">A campanha Alpaca</div><h2 class="about-intro">O nosso olhar.<br />Em cada perspectiva.</h2><a class="text-link" href="fotos.html" style="display:inline-flex;margin-top:30px">Explorar nossas fotos →</a></section>
       <section class="section wrap faq" id="duvidas">
         <div class="reveal">
           <div class="eyebrow">Antes de vestir</div>
@@ -573,7 +307,7 @@
               >Explorar no Instagram
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 12h15M13 5l7 7-7 7" /></svg></a
-            ><a class="text-link" href="index.html#drops"
+            ><a class="text-link" href="index.html#colecoes"
               >Rever a seleção
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 12h15M13 5l7 7-7 7" /></svg
@@ -582,27 +316,7 @@
         </div>
       </section>
     </main>
-    <footer class="site-footer">
-      <div class="wrap">
-        <div class="footer-top">
-          <div>
-            <a class="logo" href="#top">ALPACA<span>°</span></a>
-            <p style="margin-top: 15px">
-              Curadoria. Drops. Atitude.<br />Criciúma, Santa Catarina.
-            </p>
-          </div>
-          <div class="footer-nav">
-            <a href="index.html#drops">A seleção</a
-            ><a href="sobre.html">O conceito</a><a href="#lookbook">Lookbook</a>
-          </div>
-          <a class="text-link" href="#top">Voltar ao topo ↑</a>
-        </div>
-        <div class="footer-bottom">
-          <span>© 2026 Alpaca. Todos os direitos reservados.</span
-          ><span>Essencial é o que permanece.</span>
-        </div>
-      </div>
-    </footer>
+    <footer class="site-footer"><div class="wrap"><div class="footer-top"><div><a class="logo" href="index.html">ALPACA<span>°</span></a><p style="margin-top:15px">Curadoria. Drops. Atitude.<br />Criciúma, Santa Catarina.</p></div><div class="footer-nav"><a href="line.html" data-transition="line">LINE</a><a href="fallen-shogun.html" data-transition="shogun">Fallen Shogun</a><a href="fotos.html">Nossas fotos</a><a href="sobre.html">O conceito</a></div><a class="text-link" href="#top">Voltar ao topo ↑</a></div><div class="footer-bottom"><span>© 2026 Alpaca. Todos os direitos reservados.</span><span>Essencial é o que permanece.</span></div></div></footer>
     <dialog class="dialog" aria-labelledby="preview-title">
       <button class="dialog-close" aria-label="Fechar visualização" autofocus>
         ×
@@ -629,6 +343,10 @@
         </div>
       </div>
     </dialog>
-    <div class="page-curtain" aria-hidden="true"><span>ALPACA°</span></div>
+    <div class="page-curtain" aria-hidden="true">
+      <div class="transition-lines"><i style="--width:5vw;--delay:0.0s"></i><i style="--width:12vw;--delay:0.055s"></i><i style="--width:3vw;--delay:0.11s"></i><i style="--width:9vw;--delay:0.165s"></i><i style="--width:2vw;--delay:0.22s"></i><i style="--width:6vw;--delay:0.275s"></i><i style="--width:4vw;--delay:0.33s"></i><i style="--width:10vw;--delay:0.385s"></i></div>
+      <div class="transition-japan"><div class="transition-sun"></div><div class="transition-torii"><b></b><b></b></div><div class="transition-petals"><i style="--left:0%;--delay:0.0s"></i><i style="--left:10%;--delay:-0.1s"></i><i style="--left:20%;--delay:-0.2s"></i><i style="--left:30%;--delay:-0.30000000000000004s"></i><i style="--left:40%;--delay:-0.4s"></i><i style="--left:50%;--delay:-0.5s"></i><i style="--left:60%;--delay:-0.6000000000000001s"></i><i style="--left:70%;--delay:-0.7000000000000001s"></i><i style="--left:80%;--delay:-0.8s"></i><i style="--left:90%;--delay:-0.9s"></i><i style="--left:100%;--delay:-1.0s"></i><i style="--left:110%;--delay:-1.1s"></i></div></div>
+      <div class="transition-label"><small>ALPACA / ENTRE NO NOSSO UNIVERSO</small><strong>ALPACA°</strong></div>
+    </div>
   </body>
 </html>

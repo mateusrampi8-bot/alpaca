@@ -90,8 +90,32 @@
 })();
 
 (() => {
+  const root = document.documentElement;
+  const label = document.querySelector(".transition-label strong");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+  const legacy = { "#line": "line.html", "#line-options": "line.html#line-options", "#lookbook": "fotos.html#lookbook" };
+  if ((location.pathname.endsWith("/index.html") || location.pathname.endsWith("/")) && legacy[location.hash]) {
+    location.replace(new URL(legacy[location.hash], location.href));
+    return;
+  }
+  const setTheme = (theme) => {
+    root.dataset.transition = theme;
+    if (label) label.textContent = theme === "line" ? "LINE." : theme === "shogun" ? "FALLEN SHOGUN" : "ALPACA°";
+  };
+  const themeFor = (url) => url.pathname.endsWith("/line.html") ? "line" : url.pathname.endsWith("/fallen-shogun.html") ? "shogun" : "brand";
+  const menus = [...document.querySelectorAll(".collections-menu")];
+  document.addEventListener("click", (event) => {
+    menus.forEach((menu) => { if (!menu.contains(event.target)) menu.open = false; });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    const menu = menus.find((item) => item.open);
+    if (!menu) return;
+    menu.open = false;
+    menu.querySelector("summary").focus();
+  });
 
-  // Same-origin page navigation uses a short curtain; hashes and external links stay native.
+  // The destination determines the entrance, regardless of which link is used.
   let navigating = false;
   document.addEventListener("click", (event) => {
     const link = event.target.closest("a[href]");
@@ -120,24 +144,31 @@
     }
     event.preventDefault();
     navigating = true;
-    document.documentElement.classList.add("is-leaving");
+    const theme = themeFor(next);
+    setTheme(theme);
+    root.classList.remove("page-arrival");
+    root.classList.add("is-leaving");
     try {
-      sessionStorage.setItem("alpaca-page-transition", "1");
+      sessionStorage.setItem("alpaca-page-transition", JSON.stringify({ theme, at: Date.now(), destination: next.pathname }));
     } catch {}
-    setTimeout(() => location.assign(next.href), 520);
+    const duration = reduced.matches ? 120 : theme === "line" ? 1100 : theme === "shogun" ? 1200 : 520;
+    setTimeout(() => location.assign(next.href), duration);
   });
   try {
-    if (sessionStorage.getItem("alpaca-page-transition") === "1") {
+    const saved = sessionStorage.getItem("alpaca-page-transition");
+    if (saved) {
       sessionStorage.removeItem("alpaca-page-transition");
-      document.documentElement.classList.add("page-arrival");
-      setTimeout(
-        () => document.documentElement.classList.remove("page-arrival"),
-        850,
-      );
+      const arrival = JSON.parse(saved);
+      if (arrival.destination === location.pathname && Date.now() - arrival.at < 15000) {
+        setTheme(arrival.theme);
+        root.classList.add("page-arrival");
+        setTimeout(() => root.classList.remove("page-arrival"), reduced.matches ? 180 : 1100);
+      }
     }
   } catch {}
-  addEventListener("pageshow", () => {
+  addEventListener("pageshow", (event) => {
     navigating = false;
-    document.documentElement.classList.remove("is-leaving");
+    root.classList.remove("is-leaving");
+    if (event.persisted) root.classList.remove("page-arrival");
   });
 })();

@@ -6,6 +6,7 @@ const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".nav-links");
 function closeMenu() {
   menu.classList.remove("open");
+  menu.querySelectorAll("details[open]").forEach((details) => { details.open = false; });
   menuToggle.setAttribute("aria-expanded", "false");
   menuToggle.setAttribute("aria-label", "Abrir menu");
 }
