@@ -13,12 +13,11 @@
       const petals = Array.from({ length: 60 }, (_, i) => ({
         x: ((i * 0.61803398875) % 1),
         y: ((i * 0.38196601125 + 0.12) % 1),
-        radius: 6 + (i % 5) * 1.6,
-        duration: 14 + (i % 7) * 2,
+        radius: 8 + (i % 5) * 1.4,
+        duration: 18 + (i % 7) * 2,
         angle: i * 2.4,
         spin: (i % 2 ? 1 : -1) * (0.35 + (i % 4) * 0.15),
-        opacity: 0.5 + (i % 4) * 0.09,
-        color: ["#f7c9d5", "#eaa4bb", "#f3b9ca"][i % 3],
+        opacity: 0.55 + (i % 4) * 0.07,
       }));
       function resize() {
         width = field.clientWidth || window.innerWidth;
@@ -41,18 +40,44 @@
           const sway = Math.sin(elapsed * 0.6 + i * 1.7) * 35;
           const x = ((petal.x * width + sway + 40) % (width + 80)) - 40;
           const y = petal.y * (height + 64) - 32;
-          const flutter = 0.4 + Math.abs(Math.sin(elapsed * 0.85 + i)) * 0.6;
+          const flutter = 0.7 + Math.abs(Math.sin(elapsed * 0.65 + i)) * 0.3;
           ctx.save();
           ctx.translate(x, y);
           ctx.rotate(petal.angle + elapsed * petal.spin);
-          ctx.scale(petal.radius * flutter, petal.radius * 0.72);
+          ctx.scale(petal.radius * flutter, petal.radius);
           ctx.globalAlpha = petal.opacity;
-          ctx.fillStyle = petal.color;
+          const shading = ctx.createLinearGradient(-0.8, -1, 0.8, 1);
+          shading.addColorStop(0, "#fff1f5");
+          shading.addColorStop(0.35, "#f5bccd");
+          shading.addColorStop(0.7, "#e68ba9");
+          shading.addColorStop(1, "#bb567d");
+          ctx.fillStyle = shading;
+          // Rounded shoulders, a sakura notch, and a tapered base.
           ctx.beginPath();
-          ctx.moveTo(0, -1);
-          ctx.bezierCurveTo(-1.15, -0.8, -1.1, 0.45, 0, 1);
-          ctx.bezierCurveTo(1.1, 0.45, 1.15, -0.8, 0, -1);
+          ctx.moveTo(0, 1.05);
+          ctx.bezierCurveTo(-0.55, 0.72, -1.02, 0.08, -0.87, -0.51);
+          ctx.bezierCurveTo(-0.76, -0.98, -0.32, -1.12, -0.1, -0.91);
+          ctx.lineTo(0, -0.7);
+          ctx.lineTo(0.13, -0.94);
+          ctx.bezierCurveTo(0.4, -1.17, 0.92, -0.84, 0.94, -0.4);
+          ctx.bezierCurveTo(1.02, 0.18, 0.53, 0.83, 0, 1.05);
+          ctx.closePath();
           ctx.fill();
+          ctx.lineWidth = 0.045;
+          ctx.strokeStyle = "rgba(162, 63, 103, 0.55)";
+          ctx.stroke();
+          // Fine central vein and a small highlight add definition at small sizes.
+          ctx.beginPath();
+          ctx.moveTo(0, 0.82);
+          ctx.bezierCurveTo(-0.1, 0.3, 0.2, -0.15, 0.03, -0.6);
+          ctx.lineWidth = 0.035;
+          ctx.strokeStyle = "rgba(164, 66, 106, 0.4)";
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(-0.33, -0.75);
+          ctx.bezierCurveTo(-0.68, -0.5, -0.64, -0.12, -0.4, 0.16);
+          ctx.strokeStyle = "rgba(255, 245, 249, 0.7)";
+          ctx.stroke();
           ctx.restore();
         }
         // Hide the fallback only after a successful first canvas frame.

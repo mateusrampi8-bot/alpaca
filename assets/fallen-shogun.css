@@ -12,14 +12,14 @@
 .shogun main { transform-origin: center 20vh; transition: transform .52s var(--ease), opacity .52s; }
 .is-leaving .shogun main { transform: perspective(1400px) translateZ(-70px) rotateY(-4deg); opacity: .4; }
 .shogun .nav-cta { color: #efb8be; }
-.sakura-field { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
+.sakura-field { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
 .sakura-canvas { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; pointer-events: none; }
 .sakura-field[data-renderer="canvas"] .sakura-petal { display: none; }
 .sakura-petal {
   display: block; position: absolute; top: -32px; left: var(--left); width: var(--size); height: calc(var(--size) * .65);
-  border-radius: 85% 10% 75% 25%;
-  background: linear-gradient(135deg, #fce0e5, #d67e99 65%, #92374f);
-  opacity: var(--opacity); box-shadow: 0 0 5px #e9a0b326;
+  border-radius: 70% 40% 75% 25%;
+  background: linear-gradient(135deg, #fff1f5, #f5bccd 35%, #e68ba9 70%, #bb567d);
+  opacity: var(--opacity);
   animation: sakura-fall var(--duration) var(--delay) linear infinite;
 }
 @keyframes sakura-fall {

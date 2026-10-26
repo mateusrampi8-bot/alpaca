@@ -18,7 +18,8 @@ function collection({ width, height, ratio = 1, canvasAvailable = true }) {
     translate(x, y) { point = [x, y]; },
     fill() { frames.at(-1).push(point); },
     save() {}, restore() {}, rotate() {}, scale() {},
-    beginPath() {}, moveTo() {}, bezierCurveTo() {},
+    beginPath() {}, moveTo() {}, bezierCurveTo() {}, lineTo() {}, closePath() {}, stroke() {},
+    createLinearGradient() { return { addColorStop() {} }; },
   };
   const field = { clientWidth: width, clientHeight: height, dataset: {}, children: [], append(el) { this.children.push(el); } };
   const canvas = { getContext: () => canvasAvailable ? ctx : null };
@@ -96,4 +97,15 @@ test("Unavailable Canvas leaves the HTML/CSS petals visible", () => {
   assert.equal(app.callbacks.size, 0);
   const html = fs.readFileSync(path.join(__dirname, "../fallen-shogun.html"), "utf8");
   assert.equal((html.match(/class="sakura-petal"/g) || []).length, 42);
+});
+
+test("Petals stay behind the entire collection, including transformed product photos", () => {
+  const css = fs.readFileSync(path.join(__dirname, "../assets/fallen-shogun.css"), "utf8");
+  const background = css.match(/\.sakura-field\s*\{([^}]+)\}/)[1];
+  const content = css.match(/\.shogun main, \.shogun \.site-footer\s*\{([^}]+)\}/)[1];
+  assert.match(background, /position:\s*fixed/);
+  assert.match(background, /z-index:\s*0/);
+  assert.match(content, /position:\s*relative/);
+  assert.match(content, /z-index:\s*1/);
+  assert.match(background, /pointer-events:\s*none/);
 });
