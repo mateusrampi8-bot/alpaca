@@ -95,45 +95,18 @@
 .shogun-motion .shogun-reveal.is-visible { opacity: 1; transform: none; }
 .shogun-world { padding: 60px 0 120px; border-top: 1px solid var(--line); }
 .shogun-world-copy {
-  position: relative;
-  isolation: isolate;
-  max-width: 900px;
+  max-width: 800px;
   margin-inline: auto;
-  padding: clamp(42px, 6vw, 84px) clamp(25px, 7vw, 110px);
+  padding-block: 24px;
   text-align: center;
-  color: #39291c;
-  background:
-    radial-gradient(ellipse at 0 10%, #77503c42, transparent 35%),
-    radial-gradient(ellipse at 100% 85%, #5d382e47, transparent 35%),
-    radial-gradient(ellipse at 65% 30%, #f6e6d780, transparent 55%),
-    repeating-linear-gradient(17deg, #76502a08 0 1px, transparent 1px 5px),
-    repeating-linear-gradient(97deg, #fff5db14 0 1px, transparent 1px 7px),
-    #d7c3ac;
-  box-shadow: inset 0 0 45px #80512d45, inset 0 0 8px #6c402b80;
-  clip-path: polygon(1% .6%, 8% 0, 17% .4%, 28% .1%, 39% .5%, 52% 0, 64% .4%, 77% .1%, 88% .5%, 99% .2%, 99.5% 12%, 99.1% 26%, 100% 39%, 99.4% 53%, 99.8% 69%, 99.2% 84%, 99.8% 99.4%, 87% 100%, 74% 99.6%, 62% 99.9%, 49% 99.5%, 36% 100%, 23% 99.6%, 12% 100%, .6% 99.4%, 1% 85%, .2% 72%, .7% 58%, 0 43%, .6% 28%, .2% 14%);
+  color: var(--banner-ivory);
 }
-.shogun-world-copy::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: linear-gradient(180deg, #63432d55, #f1ddc84d 12px, transparent 36px, transparent calc(100% - 36px), #f1ddc84d calc(100% - 12px), #63432d55);
-}
-.shogun-world-copy::after {
-  content: "";
-  position: absolute;
-  inset: 18px;
-  border: 3px double #80552e3d;
-  pointer-events: none;
-}
-.shogun-world-copy .eyebrow { justify-content: center; color: #742620; }
-.shogun-world-copy .eyebrow::before { background: #a51c19; }
-.shogun-world-copy h2 { font-family: Georgia, "Times New Roman", serif; color: #42291d; font-size: clamp(34px, 4vw, 58px); line-height: 1.12; margin: 28px auto 34px; }
-.shogun-world-copy p { max-width: 620px; margin: 24px auto; font-family: Georgia, "Times New Roman", serif; line-height: 1.85; font-size: clamp(16px, 1.3vw, 18px); color: #493422; }
-.shogun-world-copy strong { color: #741d19; }
-.shogun-world-copy p:last-of-type { color: #764632; }
-.shogun-world-copy .text-link { margin-top: 20px; display: inline-flex; color: #633d28; }
+.shogun-world-copy .eyebrow { justify-content: center; color: var(--banner-smoke); }
+.shogun-world-copy h2 { color: var(--banner-ivory); font-size: clamp(38px, 5.5vw, 76px); line-height: 1.05; margin: 28px auto 24px; }
+.shogun-world-copy h3 { color: var(--banner-highlight); font-size: clamp(21px, 2.6vw, 32px); line-height: 1.3; font-weight: 500; letter-spacing: -.025em; margin: 0 auto 32px; }
+.shogun-world-copy p { max-width: 660px; margin: 24px auto; line-height: 1.85; font-size: clamp(15px, 1.3vw, 18px); color: var(--banner-smoke); }
+.shogun-world-copy strong, .shogun-world-copy p:last-of-type { color: var(--banner-ivory); }
+.shogun-world-copy .text-link { margin-top: 20px; display: inline-flex; color: var(--banner-ivory); }
 .shogun .contact { background: linear-gradient(125deg, #4a0d0deb, #210b0be6 70%); color: var(--banner-ivory); border-top: 1px solid var(--line); }
 .shogun .contact p { color: var(--banner-smoke); }
 .shogun .contact::after { color: #e6d8ca08; }
@@ -168,5 +141,4 @@
   .shogun-card-copy { display: block; padding-top: 12px; }
   .shogun-card-copy strong { display: block; font-size: 12px; margin-bottom: 6px; }
   .shogun-world { padding: 50px 0 70px; }
-  .shogun-world-copy::after { inset: 12px; }
 }
