@@ -99,7 +99,7 @@
   }
   const setTheme = (theme) => {
     root.dataset.transition = theme;
-    if (label) label.textContent = theme === "line" ? "LINE." : theme === "shogun" ? "FALLEN SHOGUN" : "ALPACA°";
+    if (label) label.textContent = theme === "line" ? "LINE." : theme === "shogun" ? "FALLEN SHOGUN" : "ALPACA";
   };
   const themeFor = (url) => url.pathname.endsWith("/line.html") ? "line" : url.pathname.endsWith("/fallen-shogun.html") ? "shogun" : "brand";
   const menus = [...document.querySelectorAll(".collections-menu")];
